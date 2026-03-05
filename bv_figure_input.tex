@@ -1,0 +1,127 @@
+% bv_figure_input.tex  --  drop-in TikZ figure for main.tex
+% Usage inside a figure environment:
+%   \resizebox{\linewidth}{!}{\input{bv_figure_input.tex}}
+%
+% Required in preamble:
+%   \usepackage{tikz}
+%   \usepackage{pgfplots}   \pgfplotsset{compat=1.18}
+%   \usepackage{xcolor}
+%   \usepackage{amsmath}
+%
+% Color definitions (add to preamble or keep here):
+\definecolor{biasred}{RGB}{175,35,35}
+\definecolor{varteal}{RGB}{25,145,150}
+\definecolor{totalblack}{RGB}{20,20,20}
+\definecolor{boxbg}{RGB}{252,252,252}
+\definecolor{ph1}{RGB}{170,35,35}
+\definecolor{ph2}{RGB}{45,110,55}
+\definecolor{ph3}{RGB}{30,95,165}
+
+\begin{tikzpicture}[font=\small]
+
+% Curves: Bias^2(x)=7.2*exp(-0.52x)+0.08,  Var(x)=0.025*exp(0.52x)
+% Minimum at x*~=5.45,  Total(x*)~=0.93
+
+\def\xmax{15.5}
+\def\ymax{9.2}
+\def\xopt{5.45}
+
+% AXES
+\draw[->, line width=1.4pt, totalblack]
+    (-0.25,0) -- (\xmax,0)
+    node[below=5pt, font=\normalsize\bfseries] {Complexity};
+\draw[->, line width=1.4pt, totalblack]
+    (0,-0.25) -- (0,\ymax)
+    node[left=5pt, font=\normalsize\bfseries, 
+    rotate=90, 
+    yshift=10pt] {Error};
+
+% CLIPPED CURVES
+\begin{scope}
+  \clip (0,0) rectangle (\xmax-0.05,\ymax-0.05);
+  \draw[biasred, line width=2.2pt, samples=250, domain=0.02:16]
+      plot (\x, {7.2*exp(-0.52*\x) + 0.08});
+  \draw[varteal, line width=2.2pt, samples=250, domain=0.02:16]
+      plot (\x, {0.025*exp(0.52*\x)});
+  \draw[totalblack, line width=2.6pt, samples=250, domain=0.02:16]
+      plot (\x, {7.2*exp(-0.52*\x) + 0.025*exp(0.52*\x) + 0.08});
+\end{scope}
+
+% % Exit arrowheads at top-right clip boundary
+% \draw[->, totalblack!80, line width=1.5pt] (14.05,8.82) -- (14.33,9.16);
+% \draw[->, varteal!80,    line width=1.5pt] (14.23,8.75) -- (14.51,9.12);
+
+% OPTIMUM DASHED LINE (draw before boxes so line is behind them)
+\draw[totalblack!55, dashed, line width=1.1pt]
+    (\xopt,-0.15) -- (\xopt,9.05);
+\filldraw[totalblack, fill=white, line width=1.0pt]
+    (\xopt,0) circle (0.16);
+
+% CURVE LABELS
+\node[totalblack, font=\small\bfseries, anchor=south west]
+    at (11.9,8.05) {Total Error};
+\node[varteal, font=\small\bfseries, anchor=west]
+    at (13.6,3.55) {Variance};
+\node[biasred, font=\small\bfseries, anchor=west]
+    at (13.4,0.50) {Bias$^2$};
+
+% % DIRECTIONAL ARROWS BELOW X-AXIS
+% \draw[->, biasred!50, line width=1.0pt]
+%     (\xopt-0.5,-0.55) -- (0.5,-0.55);
+% \draw[->, varteal!50, line width=1.0pt]
+%     (\xopt+0.5,-0.55) -- (14.3,-0.55);
+
+% BOXES
+% Box 1: Pre-2005  NW anchor at (0.3, 9.2) => spans x: 0.3..5.4, y: 7.4..9.2
+\node[draw=ph1, fill=boxbg, rounded corners=5pt, line width=1.1pt,
+      text width=4.0cm, inner xsep=10pt, inner ysep=8pt,
+      anchor=north west,
+      font=\small]
+    (box1) at (0.5, 10.0)
+    {\textcolor{ph1}{\textbf{Phase I - \,Pre-2005}}\\[5pt]
+     -Early siloed models\\[1pt]
+     -Disciplinary interaction};
+
+% Box 2: 2005-? centred at x=9.0 (clear of the dashed line label area)
+% With text width=5.6cm (~5.6 data units) => spans x: 9.0-3.1..9.0+3.1 = 5.9..12.1
+\node[draw=ph2, fill=boxbg, rounded corners=5pt, line width=1.1pt,
+      text width=5.0cm, inner xsep=10pt, inner ysep=8pt,
+      anchor=north,
+      font=\small]
+    (box2) at (8.5, 10.0)
+    {\textcolor{ph2}{\textbf{Phase II - \,2005\,--\,?}}\\[5pt]
+     -Optimal multi-risk model\\[1pt]
+     -Actionable participatory interaction};
+
+% Box 3: Phase III  NE anchor at (15.2, 9.2) => spans x: 9.9..15.2, y: 7.4..9.2
+\node[draw=ph3, fill=boxbg, rounded corners=5pt, line width=1.1pt,
+      text width=4.0cm, inner xsep=10pt, inner ysep=8pt,
+      anchor=north east,
+      font=\small]
+    (box3) at (16.2, 10.0)
+    {\textcolor{ph3}{\textbf{Phase III - \,?}}\\[5pt]
+     -``Model of everything''\\[1pt]
+     -``Too many cooks in the kitchen''};
+
+% OPTIMUM LABEL drawn LAST so it appears on top of everything
+% anchor=west => start (left/bottom) of rotated text at given coord, reads upward
+\node[totalblack!65, font=\fontsize{12}{10}\selectfont\itshape,
+      rotate=90, anchor=west]
+    at (\xopt+0.32, 1.0) {Optimum Model Complexity};
+
+% % ARROWS (drawn after boxes so tips are visible)
+% \draw[->, totalblack!38, line width=0.9pt, shorten >=5pt, shorten <=6pt]
+%     (box1.south) -- (1.2, 5.55);
+
+% \draw[->, totalblack!38, line width=0.9pt, shorten >=5pt, shorten <=6pt]
+%     (box2.south west) ++(0.3,0) -- (\xopt+0.15, 1.10);
+
+% \draw[->, totalblack!38, line width=0.9pt, shorten >=5pt, shorten <=6pt]
+%     (box3.south west) ++(0.3,0) -- (12.3, 6.6);
+
+% % Standalone uncertainty cue
+% \node[ph3, font=\large\bfseries] (qm) at (15.1,5.9) {?};
+% \draw[->, ph3!58, line width=1.1pt, shorten >=4pt, shorten <=4pt]
+%     (qm.west) -- (13.4, 4.65);
+
+\end{tikzpicture}
