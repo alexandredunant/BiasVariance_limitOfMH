@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Diff: main.tex — Proposed Revisions</title>
+<style>
+  body {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
+    line-height: 1.55;
+    background: #1e1e1e;
+    color: #d4d4d4;
+    margin: 0;
+    padding: 20px 30px;
+  }
+  h1 {
+    font-family: Arial, sans-serif;
+    color: #e0e0e0;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+    font-size: 18px;
+  }
+  h2 {
+    font-family: Arial, sans-serif;
+    color: #9cdcfe;
+    font-size: 14px;
+    margin-top: 30px;
+    margin-bottom: 5px;
+  }
+  .legend {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    margin-bottom: 20px;
+    padding: 10px 14px;
+    background: #2d2d2d;
+    border-radius: 4px;
+    display: inline-block;
+  }
+  .legend span.del { background: #4b1818; color: #f28b8b; padding: 1px 5px; border-radius: 2px; }
+  .legend span.add { background: #1e3a1e; color: #8bdf8b; padding: 1px 5px; border-radius: 2px; }
+  .legend span.ctx { color: #888; padding: 1px 5px; }
+  .block {
+    background: #252526;
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-x: auto;
+  }
+  .del {
+    background: #4b1818;
+    color: #f28b8b;
+    text-decoration: line-through;
+    display: inline;
+  }
+  .add {
+    background: #1e3a1e;
+    color: #8bdf8b;
+    display: inline;
+  }
+  .ctx {
+    color: #888;
+    display: inline;
+  }
+  .linenum {
+    color: #555;
+    user-select: none;
+    display: inline-block;
+    width: 38px;
+    text-align: right;
+    margin-right: 12px;
+  }
+  .comment {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #c0a050;
+    background: #2a2518;
+    border-left: 3px solid #c0a050;
+    padding: 6px 12px;
+    margin: 6px 0 10px 0;
+    border-radius: 0 4px 4px 0;
+  }
+  hr { border: none; border-top: 1px solid #333; margin: 24px 0; }
+</style>
+</head>
+<body>
+
+<h1>Proposed Revisions — main.tex</h1>
+
+<div class="legend">
+  <span class="del">Removed text</span> &nbsp;
+  <span class="add">Added text</span> &nbsp;
+  <span class="ctx">Unchanged context</span>
+</div>
+
+<!-- ============================================================ -->
+<h2>1. Preamble — Add missing packages (lines 6–13)</h2>
+<div class="comment">The TikZ figure requires tikz and pgfplots. Without them the document will not compile.</div>
+<div class="block"><span class="ctx">\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{float}
+\usepackage{authblk}
+\usepackage[colorinlistoftodos]{todonotes}</span>
+<span class="add">\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{xcolor}</span>
+<span class="ctx">\geometry{margin=1in}
+\setstretch{1.2}</span></div>
+
+<!-- ============================================================ -->
+<h2>2. Abstract — Restructure from single run-on sentence (lines 26–29)</h2>
+<div class="comment">The original abstract is a single ~150-word sentence. Restructured into distinct sentences covering context, gap, argument, caveat, and scope.</div>
+<div class="block"><span class="ctx">\begin{abstract}</span>
+<span class="del">Efforts to integrate multiple hazards, exposure and vulnerabilities into coherent risk frameworks have advanced over the past three decades, yet the field continues to lack operationalisable metrics to assess whether increasing model complexity has improved predictive or decision-making efficiency. This paper argues that the bias–variance tradeoff, originally from statistical learning theory, can serve as an analytical lens to interpret this trajectory and to ask whether the field's growing complexity reflects genuine progress or an "illusion of optimality". Without explicit measures of informational efficiency, risk integration could become performative rather than functional. We acknowledge that the path toward optimality must be reconciled with the actionability required by practitioners, and that once social components become central to an assessment, what counts as ``optimal'' is no longer technically determined but becomes relational, context-dependent, and contested. The paper therefore does not prescribe a universal optimum, but uses the bias--variance continuum as a diagnostic lens to ask whether current integration efforts move the field toward or away from informational efficiency---however that efficiency is ultimately defined</span>
+<span class="add">Efforts to integrate multiple hazards, exposure, and vulnerabilities into coherent risk frameworks have advanced considerably over the past three decades. Yet the field continues to lack operationalisable metrics to assess whether increasing model complexity has improved predictive or decision-making efficiency. This paper argues that the bias--variance tradeoff, originally from statistical learning theory, can serve as an analytical lens to interpret this trajectory and to ask whether the field's growing complexity reflects genuine progress or an ``illusion of optimality''. Without explicit measures of informational efficiency, risk integration risks becoming performative rather than functional. We acknowledge that the path toward optimality must be reconciled with the actionability required by practitioners, and that once social components become central to an assessment, what counts as ``optimal'' is no longer technically determined but becomes relational, context-dependent, and contested. The paper therefore does not prescribe a universal optimum, but uses the bias--variance continuum as a diagnostic lens to ask whether current integration efforts move the field toward or away from informational efficiency---however that efficiency is ultimately defined.</span>
+<span class="ctx">\end{abstract}</span></div>
+
+<!-- ============================================================ -->
+<h2>3. Replace "Conceptual Framing" with Introduction + Conceptual Framework (lines 31–43)</h2>
+<div class="comment">The original unnumbered section conflates introduction, lit review, methods, and theory. Split into a numbered Introduction (with explicit contribution statement) and a numbered Conceptual Framework section. The monolithic paragraph is broken into focused sub-paragraphs.</div>
+<div class="block"><span class="del">\section*{Conceptual Framing}
+The bias–variance framework provides a pragmatic analytical argument for a long-standing challenge in risk science: determining when integration enhances understanding and when it merely amplifies uncertainty. Initially developed in machine learning, the concept describes the tradeoff between underfitting (high bias) and overfitting (high variance). Building on \citet{Dunant2021}, who first applied this framework as an analytical argument to multi-hazard risk assessments, this paper extends the analysis to examine how disciplinary silos (high bias) and over-integrated "everything" models (high variance) both reduce efficiency. We specifically refer throughout to ``multi-risk'' frameworks as defined by \citet{zschau20172}: integrated systems that account for complex interactions among multiple hazards, exposed assets, and societal vulnerabilities---as distinct from simpler multi-hazard approaches that consider co-occurrence without systemic interdependencies. It is to be emphasized that the bias–variance framework is used here, as it was in \citet{Dunant2021}, as a conceptual heuristic—not as a literal statistical mapping—but as a lens to interrogate the balance between parsimony and complexity.  It is important to specify that regardless of the terminological scope—whether strictly multi-hazard (physical processes), multi-hazard risk (asset exposure), or multi-risk (systemic societal vulnerability)—the informational challenge is identical. Each step up this hierarchy introduces new parameters, thereby increasing the risk of variance (overfitting) if the underlying process understanding does not scale at the same rate as the model's complexity. This concept can be applied in participative exercises also, where the pursuit of comprehensive social integration may introduce redundancy, conflicting inputs, or epistemic noise---understood here as the accumulation of incommensurable knowledge claims from diverse disciplinary and stakeholder perspectives that reduce the clarity of causal inference and impede actionable synthesis \citep{Schlter2024NavigatingCRA, rusca_water_2026} --- thereby diminishing informational efficiency without commensurate gains in decision relevance. In addition, this complexity directly undermines interpretability: if practitioners cannot trace the causal logic amidst the noise of competing narratives, they cannot assume the professional responsibility required to translate these assessments into action \citep{pereira2024integrating}. In this context, the pursuit of "multi-risk" optimality must account for the bounded rationality \citep{Simon1956, Simon1947} and acknowledge the barriers of "unlimited resources of time, information, and computational might" \citep{gigerenzer2020bounded}. Analogous to the "efficiency-resilience" tradeoff \citep{Hynes2020}, the pursuit of hyper-integration (low bias) could lead to a "integration-resilience tradeoff", where noise overtakes the capacity for action.
+
+As \citet{Dunant2021} highlighted, single-hazard models in multi-hazard environments exhibit high bias, while overly complex multi-risk models show high variance without proportional gains in predictive accuracy (Figure \ref{fig:BV-figure}). However, this framework has remained largely theoretical. If not already plagued by a chronic data scarcity, the field lacks operationalisable metrics, quantitative where measurable and qualitative where not, to situate itself within this landscape—whether near an optimal balance or drifting toward inefficiency remains. This paper argues that informational efficiency---a concept with roots in decision theory \citep{Horvitz1995DisplayOIA}, information theory \citep{shannon1948mathematical, varley2025information}, and risk communication research \citep{Klinke2002ANAB}---measured through uncertainty quantification and data-to-decision translation, should become a core evaluative dimension of multi-risk science. We acknowledge, however, that explicitly measuring efficiency may not in itself dissolve the illusion of optimality, particularly when social systems resist the very notion of a clear-cut and universal optimum. The argument here is therefore not that better metrics will solve the problem, but that without any shared language of efficiency, the field cannot even diagnose where it stands.</span>
+<span class="add">\section{Introduction}
+The bias--variance framework provides a pragmatic analytical argument for a long-standing challenge in risk science: determining when integration enhances understanding and when it merely amplifies uncertainty. Initially developed in machine learning, the concept describes the tradeoff between underfitting (high bias) and overfitting (high variance). Building on \citet{Dunant2021}, who first applied this framework as an analytical argument to multi-hazard risk assessments, this paper extends the analysis in three directions: (i) a three-phase historical mapping of the field's trajectory onto the bias--variance continuum, (ii) the introduction of \textit{informational efficiency} as a core evaluative concept, and (iii) a diagnosis of the ``illusion of optimality''---the risk that increasing complexity is mistaken for progress in the absence of shared efficiency metrics.
+
+We specifically refer throughout to ``multi-risk'' frameworks as defined by \citet{zschau20172}: integrated systems that account for complex interactions among multiple hazards, exposed assets, and societal vulnerabilities---as distinct from simpler multi-hazard approaches that consider co-occurrence without systemic interdependencies. It is important to specify that regardless of the terminological scope---whether strictly multi-hazard (physical processes), multi-hazard risk (asset exposure), or multi-risk (systemic societal vulnerability)---the informational challenge is identical. Each step up this hierarchy introduces new parameters, thereby increasing the risk of variance (overfitting) if the underlying process understanding does not scale at the same rate as the model's complexity.
+
+As \citet{Dunant2021} highlighted, single-hazard models in multi-hazard environments exhibit high bias, while overly complex multi-risk models show high variance without proportional gains in predictive accuracy (Figure~\ref{fig:BV-figure}). However, this framework has remained largely theoretical. The field lacks operationalisable metrics---quantitative where measurable, qualitative where not---to situate itself within this landscape; whether it sits near an optimal balance or drifts toward inefficiency remains unknown. This paper argues that \textit{informational efficiency}---the capacity to convert increased model complexity into proportional gains in uncertainty-aware, decision-relevant outputs---should become a core evaluative dimension of multi-risk science. The concept draws on decision theory \citep{Horvitz1995DisplayOIA}, information theory \citep{shannon1948mathematical, varley2025information}, and risk communication research \citep{Klinke2002ANAB}. We acknowledge, however, that explicitly measuring efficiency may not in itself dissolve the illusion of optimality, particularly when social systems resist the very notion of a clear-cut and universal optimum. The argument is therefore not that better metrics will solve the problem, but that without any shared language of efficiency, the field cannot even diagnose where it stands.
+
+\section{Conceptual Framework}
+The bias--variance framework is used here, as in \citet{Dunant2021}, as a conceptual heuristic---not as a literal statistical mapping. In statistical learning theory, bias and variance are mathematically decomposable components of prediction error; in multi-risk science, they are not. The analogy is therefore diagnostic rather than quantitative: it provides a vocabulary for asking whether a given integration effort errs toward oversimplification (high bias) or toward unmanageable complexity (high variance), without implying that formal decomposition is possible.
+
+This lens applies beyond physical models. In participative exercises, the pursuit of comprehensive social integration may introduce redundancy, conflicting inputs, or epistemic noise---the accumulation of incommensurable knowledge claims from diverse disciplinary and stakeholder perspectives that reduce the clarity of causal inference and impede actionable synthesis \citep{Schlter2024NavigatingCRA, rusca_water_2026}---thereby diminishing informational efficiency without commensurate gains in decision relevance. This complexity also directly undermines interpretability: if practitioners cannot trace the causal logic amidst the noise of competing narratives, they cannot assume the professional responsibility required to translate assessments into action \citep{pereira2024integrating}.
+
+In this context, the pursuit of ``multi-risk'' optimality must account for bounded rationality \citep{Simon1956, Simon1947} and acknowledge the absence of ``unlimited resources of time, information, and computational might'' \citep{gigerenzer2020bounded}. Analogous to the ``efficiency--resilience'' tradeoff \citep{Hynes2020}, hyper-integration (low bias) could produce an ``integration--resilience tradeoff'', where noise overtakes the capacity for action.</span></div>
+
+<!-- ============================================================ -->
+<h2>4. Figure 1 — No text changes needed (lines 36–41)</h2>
+<div class="comment">The figure code itself is fine. Consider uncommenting the arrows in bv_figure_input.tex (lines 112–120) and revising the Phase II box label from "Optimal multi-risk model" to "Toward optimal integration?" — this change would be in bv_figure_input.tex, not main.tex.</div>
+
+<!-- ============================================================ -->
+<h2>5. Transition paragraph after Figure 1 (line 43)</h2>
+<div class="block"><span class="ctx">\end{figure}
+
+</span><span class="del">The following sections categorize the evolution of multi-risk science into three chronological phases to map the field's trajectory onto the bias–variance continuum \citep{Dunant2021}. This framing illustrates the transition from the high-bias simplicity of siloed origins to the high-variance complexity of modern hyper-integration, allowing for a critical evaluation of whether current integration efforts achieve functional efficiency or merely drift toward an "illusion of optimality".</span>
+<span class="add">The following sections categorise the evolution of multi-risk science into three chronological phases, mapping the field's trajectory onto the bias--variance continuum \citep{Dunant2021}. This framing illustrates the transition from the high-bias simplicity of siloed origins to the high-variance complexity of modern hyper-integration, allowing for a critical evaluation of whether current integration efforts achieve functional efficiency or merely drift toward an ``illusion of optimality''.</span></div>
+
+<!-- ============================================================ -->
+<h2>6. Phase I — Grammar fixes (lines 58, 60)</h2>
+<div class="comment">Two grammatical issues: "regardless if" → "regardless of whether"; missing punctuation between clauses on line 60.</div>
+<div class="block"><span class="ctx">During this phase, risk assessments remained largely disciplinary, emphasizing individual hazards such as floods, earthquakes, or landslides. Studies like \citet{Middelmann2000} and \citet{granger1999community} in Australia exemplified early local-scale multi-hazard assessments. At this stage most models exhibited high bias: simplified assumptions and a focus on single-event probabilities </span><span class="del">regardless if they happened</span><span class="add">regardless of whether they occurred</span><span class="ctx"> in a multi-hazard environment.
+
+The absence of uncertainty quantification and the reliance on heuristic matrices led to low informational efficiency</span><span class="del"> models were interpretable but detached</span><span class="add">; models were interpretable but remained detached</span><span class="ctx"> from cascading dynamics and long-term systemic risks. Conceptual work by \citet{Marzocchi2009} and \citet{kappes_challenges_2012} articulated the need for frameworks addressing multi-hazard and multi-risk interactions</span><span class="del"> as single-hazard approaches in multi-hazard environments are inherently biased toward specific features, missing critical interdependencies and paved the way to</span><span class="add">, arguing that single-hazard approaches in multi-hazard environments are inherently biased toward specific features and miss critical interdependencies. This work paved the way for</span><span class="ctx"> ``Phase II'' presented in the following paragraph.</span></div>
+
+<!-- ============================================================ -->
+<h2>7. Figure 2 caption — Typos and label (lines 49–54)</h2>
+<div class="comment">Fix "litterature" → "literature"; capitalise "grandjean"; replace placeholder label.</div>
+<div class="block"><span class="ctx">\begin{figure}
+    \centering
+    \includegraphics[width=0.75\linewidth]{bibliom_multihazard.png}
+    \caption{Bibliometric analysis of multihazard and multirisk </span><span class="del">litterature</span><span class="add">literature</span><span class="ctx"> by a) \cite{Tilloy2019} b) \cite{Owolabi2023} and c) \cite{</span><span class="del">grandjean2025bibliographic</span><span class="add">grandjean2025bibliographic</span><span class="ctx">}, with the red dotted line highlighting the year 2005.}
+    \label{</span><span class="del">fig:placeholder</span><span class="add">fig:bibliometric</span><span class="ctx">}
+\end{figure}</span></div>
+
+<!-- ============================================================ -->
+<h2>8. Phase II — Citation fix and spacing issues (lines 64–68)</h2>
+<div class="comment">Missing semicolons/commas in \citealt chain; missing spaces before sentences; "prevalent" → "pertinent".</div>
+<div class="block"><span class="ctx">Research during this phase reduced bias by linking hazard chains, introducing Bayesian networks, and incorporating network-based or spatio–temporal frameworks (</span><span class="del">\citealt{Tilloy2019}; \citealt{DeAngeli2022}; \citealt{Terzi2019}; \citealt{dunant2021multihazards} \citealt{dunant2025impacts}</span><span class="add">\citealt{Tilloy2019}; \citealt{DeAngeli2022}; \citealt{Terzi2019}; \citealt{dunant2021multihazards}; \citealt{dunant2025impacts}</span><span class="ctx">). These efforts represented a major step toward a unified understanding of cascading effects and feedback loops. At this stage, multi-hazard adoption induced a rise in variance of the risk models.</span></div>
+
+<div class="block"><span class="ctx">...The illusion of optimality persisted not simply because standardized metrics were absent, but because the very notion of what constitutes an informational gain was never made explicit: whether efficiency should be measured in terms of improved risk communication, facilitated action, or deeper process understanding remained unarticulated. This ambiguity---not merely a technical gap---is what could allow increasing complexity to be mistaken for progress. \citet{Dunant2021}'s warning that as model complexity increases, the risk of ``overfitting'' escalates, potentially impairing the practical precision of multi-hazard outputs, is even more </span><span class="del">prevalent</span><span class="add">pertinent</span><span class="ctx"> today as the tools</span><span class="del">, for large scale computation and collaboration become, more</span><span class="add"> for large-scale computation and collaboration become more</span><span class="ctx"> accessible \citep{mack2011fifty}.</span></div>
+
+<!-- ============================================================ -->
+<h2>9. Phase III — Missing space (line 77)</h2>
+<div class="block"><span class="ctx">...the question is whether it narrows the range of defensible decisions under uncertainty in a way that is institutionally actionable \citep{polese2024multi}.</span><span class="del">In both cases,</span><span class="add"> In both cases,</span><span class="ctx"> the threshold for ``good enough'' is as much social and institutional as it is technical---it depends on who will use the output, under what constraints, and toward what decision \citep{HangerKopp2022, Simon1956}.</span></div>
+
+<div class="block"><span class="ctx">Future progress depends on being honest about what kind of progress is being made.</span><span class="del">The</span><span class="add"> The</span><span class="ctx"> objectives of \textit{scientific progress} (advancing process understanding) and \textit{operational progress} (supporting defensible decisions) are not opposed, but they optimise differently and require different standards of evaluation.</span></div>
+
+<!-- ============================================================ -->
+<h2>10. Add Discussion section before Conclusion (new, after line 78)</h2>
+<div class="comment">A Discussion section synthesises across the three phases, acknowledges the analogy's limitations, and sharpens the forward-looking argument. Insert before the Conclusion.</div>
+<div class="block"><span class="add">\section{Discussion}
+The three phases outlined above trace a field that has moved from high-bias simplicity to high-variance complexity without a clear mechanism for evaluating whether this trajectory constitutes progress. Several observations emerge from this mapping.
+
+First, the bias--variance analogy illuminates but does not resolve. In statistical learning, model selection can be guided by cross-validation against held-out data; in multi-risk science, no equivalent ground truth exists against which to calibrate. The analogy therefore functions as a diagnostic vocabulary---useful for framing the problem, but insufficient as a prescriptive tool. Future work should explore whether proxy metrics drawn from information theory (e.g., mutual information between model inputs and decision outputs) or decision analysis (e.g., value of information) can partially operationalise this vocabulary.
+
+Second, the distinction between scientific and operational progress---raised in Phase~III---deserves further attention. The ``Mushy Middle'' \citep{stonehouse2007competitive}, originally a concept from competitive strategy describing firms that pursue neither cost leadership nor differentiation, finds a parallel in multi-risk models that achieve neither deep process understanding nor operational tractability. Recognising this risk does not require abandoning integration, but it does require that researchers and practitioners articulate---before model development---which standard of evaluation applies.
+
+Third, informational efficiency as proposed here remains deliberately underspecified in its measurement. This is intentional: premature formalisation risks privileging one definition of ``useful output'' over others. Nevertheless, the field would benefit from pilot studies that attempt to quantify efficiency in bounded contexts---for example, by comparing the marginal decision value of adding a second hazard layer to a single-hazard assessment in a specific governance setting.</span></div>
+
+<!-- ============================================================ -->
+<h2>11. Conclusion — Grammar fix (line 81)</h2>
+<div class="block"><span class="ctx">\section{Conclusion: Toward Quantifiable Efficiency in Multi-Risk Science}
+The history of multi-risk assessment reflects oscillations between bias and variance rather than a smooth path to optimality. The current landscape demonstrates that complexity alone does not equate to progress. This paper, building on the foundational bias-variance perspective introduced by \citet{Dunant2021}, calls for </span><span class="del">a clear research intent and an emphasize toward tracking, an often sidelined, informational efficiency: the systematic evolution of how uncertainty, interpretability and usability with integration.</span><span class="add">clear research intent and an emphasis on tracking informational efficiency---an often-sidelined concern---namely, the systematic evaluation of how uncertainty, interpretability, and usability evolve with integration.</span><span class="ctx"> The bias–variance framework is not an end in itself, but an analytical argument for a pragmatic requirement—the need to assess where we stand. Establishing shared metrics for uncertainty and informational efficiency is now essential for ensuring that the evolution of multi-risk modelling remains both rigorous and actionable in the midst of globally connected challenges.</span></div>
+
+<!-- ============================================================ -->
+<h2>12. Competing interests — Fix singular/plural (line 86)</h2>
+<div class="block"><span class="ctx">\section*{Competing Interests}
+The author</span><span class="del">declares</span><span class="add">s declare</span><span class="ctx"> no competing interests.</span></div>
+
+<!-- ============================================================ -->
+<hr>
+<h2>Summary of all changes</h2>
+<div class="comment" style="white-space: normal; line-height: 1.6;">
+<strong>Compilation fix:</strong> Added tikz, pgfplots, xcolor packages.<br>
+<strong>Abstract:</strong> Broken from single run-on sentence into proper multi-sentence structure; added closing period.<br>
+<strong>Structure:</strong> Split "Conceptual Framing" into numbered "Introduction" (with explicit 3-part contribution statement) and "Conceptual Framework" (with analogy guardrails). Added "Discussion" section before Conclusion.<br>
+<strong>Informational efficiency:</strong> Unified definition in Introduction ("the capacity to convert increased model complexity into proportional gains in uncertainty-aware, decision-relevant outputs").<br>
+<strong>Analogy guardrails:</strong> New paragraph in Conceptual Framework explicitly states what the analogy can and cannot do.<br>
+<strong>Grammar:</strong> Fixed "regardless if" → "regardless of whether"; fixed run-on at line 60; fixed "prevalent" → "pertinent"; fixed errant commas around "for large scale computation"; fixed missing spaces (×2); fixed "an emphasize toward tracking" → "an emphasis on tracking"; fixed incomplete clause in Conclusion.<br>
+<strong>Citations:</strong> Added missing semicolon between \citealt entries (line 66).<br>
+<strong>Figure 2:</strong> Fixed "litterature" → "literature"; renamed \label from fig:placeholder to fig:bibliometric.<br>
+<strong>Competing interests:</strong> Fixed to plural ("authors declare") to match two-author byline.<br>
+<strong>Suggested (in bv_figure_input.tex, not shown):</strong> Rename Phase II box to "Toward optimal integration?"; consider uncommenting connector arrows.
+</div>
+
+</body>
+</html>
