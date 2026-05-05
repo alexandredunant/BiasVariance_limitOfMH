@@ -1,0 +1,41 @@
+\usepackage{booktabs} % Add to preamble if not already there
+\usepackage{tabularx} % For flexible column widths
+
+\begin{table}[htbp]
+\centering
+\caption{Dimensions of informational efficiency for multi-risk assessments. Rather than a single scalar metric, efficiency is operationalised as a multi-dimensional evaluation spanning statistical, decisional, temporal, and institutional domains.}
+\label{tab:efficiency_metrics}
+\begin{tabularx}{\textwidth}{@{} l l X l @{}}
+\toprule
+\textbf{Efficiency Dimension} & \textbf{Core Decision Question} & \textbf{Candidate Metric / Proxy} & \textbf{Theoretical Origin} \\
+\midrule
+
+\textbf{Information Gain} & Does adding this complexity (e.g., a hazard layer) reduce uncertainty about the risk state? & 
+\textit{Mutual Information}: Quantifies the reduction in entropy of the outcome variable given the new model input. \newline
+\textit{Variance Reduction}: Percentage decrease in output variance relative to a simpler baseline. & 
+Information Theory \newline \newline Statistical Learning \\
+
+\midrule
+
+\textbf{Decision Impact} & Does the added complexity actually change the decision that would be made? & 
+\textit{Decision Divergence Rate}: Frequency with which the complex model triggers a different categorical action (e.g., evacuate vs. shelter) compared to a simpler heuristic. \newline
+\textit{Expected Value of Including Uncertainty (EVIU)}: Change in expected loss when acting on the complex model vs. a baseline. & 
+Decision Analysis \newline \newline Bayesian Decision Theory \\
+
+\midrule
+
+\textbf{Temporal Efficiency} & Does the model yield the decision within the available operational time window? & 
+\textit{Decision Latency}: Time elapsed from data input to an actionable, interpretable output. \newline
+\textit{Time-to-Threshold}: Ratio of model processing time to the physical lead time of the hazard. & 
+Operations Research \newline \newline Early Warning Systems \\
+
+\midrule
+
+\textbf{Institutional Uptake} & Can the end-user actually process and defend the output under pressure? & 
+\textit{Utilisation Rate (ITT proxy)}: Proportion of offered model runs that are actually used in the final decision (Intention-to-Treat). \newline
+\textit{Cognitive Load}: Number of distinct probabilistic inputs a decision-maker must synthesize to reach a binary action. & 
+Behavioural Economics \newline \newline Bounded Rationality \\
+
+\bottomrule
+\end{tabularx}
+\end{table}
