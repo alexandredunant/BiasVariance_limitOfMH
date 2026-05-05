@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99e
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+Reallocating 'name_of_file' (item size: 1) to 8 items.
+The style file: apalike.bst
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Database file #1: references.bib
+Warning--there's a number but no volume in pereira2024integrating
+Warning--empty journal in seneviratne2021weather
+You've used 49 entries,
+            1935 wiz_defined-function locations,
+            787 strings with 13860 characters,
+and the built_in function-call counts, 20390 in all, are:
+= -- 1932
+> -- 1060
+< -- 30
++ -- 384
+- -- 372
+* -- 1821
+:= -- 3662
+add.period$ -- 145
+call.type$ -- 49
+change.case$ -- 423
+chr.to.int$ -- 49
+cite$ -- 51
+duplicate$ -- 680
+empty$ -- 1278
+format.name$ -- 437
+if$ -- 3852
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 41
+newline$ -- 245
+num.names$ -- 148
+pop$ -- 344
+preamble$ -- 1
+purify$ -- 427
+quote$ -- 0
+skip$ -- 519
+stack$ -- 0
+substring$ -- 1307
+swap$ -- 61
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 290
+warning$ -- 2
+while$ -- 151
+width$ -- 0
+write$ -- 624
+(There were 2 warnings)
