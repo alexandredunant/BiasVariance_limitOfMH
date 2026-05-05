@@ -35,54 +35,11 @@ Efforts to integrate multiple hazards, exposure and vulnerabilities into coheren
 \end{abstract}
 
  \section{Introduction}
-Multi-risk assessments are inherently complex, requiring the integration of compounding hazards, dynamic exposure, and evolving societal vulnerabilities. Over the past three decades, tools and methods have advanced significantly to address these multiple layers of complexity. The bias--variance framework provides a pragmatic analytical argument for a long-standing challenge in risk science: determining when integration enhances understanding and when it merely amplifies uncertainty. Initially developed in machine learning, the concept describes the tradeoff between underfitting (high bias) and overfitting (high variance). Building on \citet{Dunant2021}, who first applied this framework as an analytical argument toward multi-hazard risk assessments, this paper extends the analysis in three directions: (i) a three-phase historical mapping of the field's trajectory onto the bias--variance continuum, (ii) the introduction of \textit{informational efficiency} as a core evaluative concept, and (iii) a diagnosis of the ``illusion of optimality''---the risk that increasing complexity is mistaken for progress in the absence of shared efficiency metrics.
+Multi-risk assessments are inherently complex, requiring the integration of compounding hazards, dynamic exposure, and evolving societal vulnerabilities. Over the past three decades, tools and methods have advanced significantly to address these multiple layers of complexity. The bias--variance framework \citep{geman1992neural} provides a pragmatic analytical argument for a long-standing challenge in risk science: determining when integration enhances understanding and when it merely amplifies uncertainty. Initially developed in machine learning, the concept describes the tradeoff between underfitting (high bias) and overfitting (high variance). Lower predictive error implying a reduced uncertainty over outcomes, then affecting the expected decision \citep{geman1992geman1992neural,domingos2000unified}. Building on \citet{Dunant2021}, who first applied this framework as an analytical argument toward multi-hazard risk assessments, this paper extends the analysis in three directions: (i) a three-phase historical mapping of the field's trajectory onto the bias--variance continuum, (ii) the introduction of \textit{informational efficiency} as a core evaluative concept, and (iii) a diagnosis of the ``illusion of optimality''---the risk that increasing complexity is mistaken for progress in the absence of shared efficiency metrics.
 
 We specifically refer throughout to ``multi-risk'' frameworks as defined by \citet{zschau20172}: integrated systems that account for complex interactions among multiple hazards, exposed assets, and societal vulnerabilities---as distinct from simpler multi-hazard approaches that consider co-occurrence without systemic interdependencies. It is important to specify that regardless of the terminological scope---whether strictly multi-hazard (physical processes), multi-hazard risk (asset exposure), or multi-risk (systemic societal vulnerability)---the fundamental structral challenge remains analogous with the understanding that the rate of complexity increases at each step. Indeed each step up this hierarchy introduces new parameters, thereby increasing the risk of variance (overfitting) if the underlying process understanding does not scale at the same rate as the model's complexity.
 
-As \citet{Dunant2021} highlighted, single-hazard models in multi-hazard environments exhibit high bias, while overly complex multi-risk models might show high variance without proportional gains in predictive accuracy (Figure~\ref{fig:BV-figure}). However, this framework has remained largely theoretical. The field lacks operationalisable metrics---quantitative where measurable, qualitative where not---to situate itself within this landscape; whether it sits near an optimal balance or drifts toward inefficiency remains unknown. This paper argues that \textit{informational efficiency}---the capacity to convert increased model complexity into proportional gains in uncertainty-aware, decision-relevant outputs---should become a core evaluative dimension of multi-risk science. The concept draws on decision theory \citep{Horvitz1995DisplayOIA}, information theory \citep{shannon1948mathematical, varley2025information}, and risk communication research \citep{Klinke2002ANAB}. In the context herein, informational efficiency is distinct from traditional statistical accuracy. In multi-risk environments, a purely quantitative "performance" metric risks missing the local social features and contexts that are fundamental to risk decision-making. Efficiency, therefore, is not a single rigid metric, but encompasses the qualitative utility of the model within its specific social and institutional context. Potential quantification are proposed \ref{tab:efficiency_metrics}. We acknowledge, that explicitly measuring efficiency may not in itself dissolve the illusion of optimality, particularly when social systems resist the very notion of a clear-cut and universal optimum. The argument is therefore not that better metrics will solve the problem, but that without any shared language of efficiency, the field cannot even diagnose where it stands
-
-\begin{table}[H]
-\centering
-\caption{Dimensions of informational efficiency for multi-risk assessments. Rather than a single scalar metric, efficiency is operationalised as a multi-dimensional evaluation spanning statistical, decisional, temporal, and institutional domains.}
-\label{tab:efficiency_metrics}
-\small
-\setlength{\tabcolsep}{4pt}
-\renewcommand{\arraystretch}{1.18}
-\begin{tabularx}{\textwidth}{@{} >{\raggedright\arraybackslash}p{0.18\textwidth} >{\raggedright\arraybackslash}p{0.22\textwidth} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{0.17\textwidth} @{}}
-\toprule
-\textbf{Efficiency Dimension} & \textbf{Core Decision Question} & \textbf{Candidate Metric / Proxy} & \textbf{Theoretical Origin} \\
-\midrule
-
-\textbf{Information Gain} & Does adding this complexity (e.g., a hazard layer) reduce uncertainty about the risk state? &
-\textit{Mutual Information}: Quantifies the reduction in entropy of the outcome variable given the new model input.\par
-\textit{Variance Reduction}: Percentage decrease in output variance relative to a simpler baseline. &
-Information Theory\par Statistical Learning \\
-
-\midrule
-
-\textbf{Decision Impact} & Does the added complexity actually change the decision that would be made? &
-\textit{Decision Divergence Rate}: Frequency with which the complex model triggers a different categorical action (e.g., evacuate vs. shelter) compared to a simpler heuristic.\par
-\textit{Expected Value of Including Uncertainty (EVIU)}: Change in expected loss when acting on the complex model vs. a baseline. &
-Decision Analysis\par Bayesian Decision Theory \\
-
-\midrule
-
-\textbf{Temporal Efficiency} & Does the model yield the decision within the available operational time window? &
-\textit{Decision Latency}: Time elapsed from data input to an actionable, interpretable output.\par
-\textit{Time-to-Threshold}: Ratio of model processing time to the physical lead time of the hazard. &
-Operations Research\par Early Warning Systems \\
-
-\midrule
-
-\textbf{Institutional Uptake} & Can the end-user actually process and defend the output under pressure? &
-\textit{Utilisation Rate (ITT proxy)}: Proportion of offered model runs that are actually used in the final decision (Intention-to-Treat).\par
-\textit{Cognitive Load}: Number of distinct probabilistic inputs a decision-maker must synthesize to reach a binary action. &
-Behavioural Economics\par Bounded Rationality \\
-
-\bottomrule
-\end{tabularx}
-\end{table}
-
+As \citet{Dunant2021} highlighted, single-hazard models in multi-hazard environments exhibit high bias, while overly complex multi-risk models might show high variance without proportional gains in predictive accuracy (Figure~\ref{fig:BV-figure}). However, this framework has remained largely theoretical. The field lacks operationalisable metrics---quantitative where measurable, qualitative where not---to situate itself within this landscape; whether it sits near an optimal balance or drifts toward inefficiency remains unknown. This paper argues that \textit{informational efficiency}---the capacity to convert increased model complexity into proportional gains in uncertainty-aware, decision-relevant outputs---should become a core evaluative dimension of multi-risk science. The concept draws on decision theory \citep{Horvitz1995DisplayOIA}, information theory \citep{shannon1948mathematical, cover2006elements}, and risk communication research \citep{Klinke2002ANAB}. In the context herein, informational efficiency is distinct from traditional statistical accuracy. In multi-risk environments, a purely quantitative "performance" metric risks missing the local social features and contexts that are fundamental to risk decision-making. Efficiency, therefore, is not a single rigid metric, but encompasses the qualitative utility of the model within its specific social and institutional context. Potential quantification are proposed \ref{tab:efficiency_metrics}. We acknowledge, that explicitly measuring efficiency may not in itself dissolve the illusion of optimality, particularly when social systems resist the very notion of a clear-cut and universal optimum. The argument is therefore not that better metrics will solve the problem, but that without any shared language of efficiency, the field cannot even diagnose where it stands
 
 \section{Conceptual Framework}
 The bias--variance framework is used here, as in \citet{Dunant2021}, as a conceptual heuristic---not as a literal statistical mapping. In statistical learning theory, bias and variance are mathematically decomposable components of prediction error; in multi-risk science, they are not. The analogy is therefore diagnostic rather than quantitative: it provides a vocabulary for asking whether a given integration effort evolves toward oversimplification (high bias) or toward unmanageable complexity (high variance).
@@ -259,13 +216,59 @@ Future progress depends on being honest about what kind of progress is being mad
 What the field currently lacks might not be more integration, but an explicit, shared account of these thresholds. Without it, efficiency claims remain unverifiable, complexity continues to be equated with progress, and the illusion of optimality persists \citep{scolobig2017mainstreaming, kalogiannidis2024analyzing}.
 
 \section{Discussion}
-The three phases outlined above trace a field that has moved from high-bias simplicity to high-variance complexity without a clear mechanism for evaluating whether this trajectory constitutes progress. Several observations emerge from this mapping.
 
-First, the bias--variance analogy illuminates but does not resolve. In statistical learning, model selection can be guided by cross-validation against held-out data; in multi-risk science, it is challenging to find equivalent ground truth exists against which to calibrate. The analogy therefore functions as a diagnostic vocabulary---useful for framing the problem, but insufficient as a prescriptive tool. Future work should explore whether proxy metrics drawn from information theory (e.g., mutual information between model inputs and decision outputs) or decision analysis (e.g., value of information) can partially operationalise this vocabulary.
+\subsection{Structural Observations}
+The three phases outlined above trace a field that is moving on a spectrum from high-bias simplicity to high-variance complexity without a clear mechanism for evaluating its actual position and whether this trajectory constitutes progress. Several observations emerge from this mapping.
 
-Second, the distinction between scientific and operational progress---raised in Phase~III---deserves further attention. The ``Mushy Middle'' \citep{stonehouse2007competitive}, originally a concept from competitive strategy describing firms that pursue neither cost leadership nor differentiation, finds a parallel in multi-risk models that achieve neither deep process understanding nor operational tractability. Recognising this risk does not require abandoning integration, but it does require that researchers and practitioners articulate---before model development---which standard of evaluation applies.
+First, the bias--variance analogy illuminates but does not resolve. In statistical learning, model selection can be guided by cross-validation against held-out data; in multi-risk science, it is challenging to find equivalent ground truth exists against which to calibrate. The analogy therefore functions as a diagnostic vocabulary---useful for framing the problem, but insufficient as a prescriptive tool.
 
-Third, informational efficiency as proposed here remains deliberately underspecified in its measurement. This is intentional: premature formalisation risks privileging one definition of ``useful output'' over others. Nevertheless, the field would benefit from pilot studies that attempt to quantify efficiency in bounded contexts---for example, by comparing the marginal decision value of adding a second hazard layer to a single-hazard assessment in a specific governance setting.
+Second, the distinction between scientific and operational progress---raised in Phase~III---deserves further attention. The ``Mushy Middle'' \citep{stonehouse2007competitive}, originally a concept from competitive strategy describing firms that pursue neither cost leadership nor differentiation, finds a parallel in multi-risk initiatives that achieve neither deep process understanding nor operational tractability. Recognising this risk does not require abandoning integration, but it does require that researchers and practitioners articulate---before model development---which standard of evaluation applies.
+
+Third, informational efficiency as proposed here remains deliberately underspecified in its measurement. This is intentional: premature formalisation risks privileging one definition of ``useful output'' over others. Nevertheless, the field would benefit from pilot studies that attempt to quantify efficiency in bounded contexts---for example, by comparing the marginal decision value of adding a second hazard layer to a single-hazard assessment in a specific governance setting. Table~\ref{tab:efficiency_metrics} summarises candidate metrics across four dimensions for such efforts.
+
+\begin{table}[H]
+\centering
+\caption{Dimensions of informational efficiency for multi-risk assessments. Rather than a single scalar metric, efficiency is operationalised as a multi-dimensional evaluation spanning statistical, decisional, temporal, and institutional domains.}
+\label{tab:efficiency_metrics}
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.18}
+\begin{tabularx}{\textwidth}{@{} >{\raggedright\arraybackslash}p{0.18\textwidth} >{\raggedright\arraybackslash}p{0.22\textwidth} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{0.17\textwidth} @{}}
+\toprule
+\textbf{Efficiency Dimension} & \textbf{Core Decision Question} & \textbf{Candidate Metric / Proxy} & \textbf{Theoretical Origin} \\
+\midrule
+
+\textbf{Information Gain} & Does adding this complexity (e.g., a hazard layer) reduce uncertainty about the risk state? &
+\textit{Mutual Information}: Measures whether a new model input (e.g., an additional hazard layer) genuinely reduces uncertainty about the risk outcome, or merely adds noise.\par
+\textit{Variance Reduction}: Measures whether the model's outputs become more stable once that input is included, relative to a simpler baseline. &
+\citep{shannon1948mathematical}\par \citep{varley2025information} \\
+
+\midrule
+
+\textbf{Decision Impact} & Does the added complexity actually change the decision that would be made? &
+\textit{Decision Divergence Rate}: Frequency with which the complex model triggers a different categorical action (e.g., evacuate vs. shelter) compared to a simpler heuristic.\par
+\textit{Expected Value of Including Uncertainty (EVIU)}: Change in expected loss when acting on the complex model vs. a baseline. &
+\citep{Horvitz1995DisplayOIA}\par \citep{Klinke2002ANAB} \\
+
+\midrule
+
+\textbf{Temporal Efficiency} & Does the model yield the decision within the available operational time window? &
+\textit{Decision Latency}: Time elapsed from data input to an actionable, interpretable output.\par
+\textit{Time-to-Decision Window}: Ratio of model processing time to the physical lead time of the hazard. &
+\citep{reichstein2025early} \\
+
+\midrule
+
+\textbf{Institutional Uptake} & Can the end-user actually process and defend the output under pressure? &
+\textit{Utilisation Rate (ITT proxy)}: Proportion of offered model runs that are actually used in the final decision (Intention-to-Treat).\par
+\textit{Cognitive Load}: Number of distinct probabilistic inputs a decision-maker must synthesize to reach a binary action. &
+\citep{Simon1956}\par \citep{gigerenzer2020bounded} \\
+
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The question then becomes how such pilot studies might be structured in practice---and whether a more systematic evaluative methodology can be designed to test informational efficiency under realistic operational conditions.
 
 \subsection{From Theoretical Optimality to Operational Utility}
  
@@ -273,7 +276,7 @@ The preceding observations diagnose a structural problem---the conflation of com
  
 \subsubsection{The Operational Reality of Phase~III Models}
  
-The core bottleneck exposed by the Phase~III landscape is not a deficit of integration but a deficit of uptake. When a civil protection agency is presented with a hyper-integrated, multi-risk model during or in preparation for a crisis, the likely institutional response is not enhanced decision-making but one of two failure modes: paralysis induced by interpretive overload, or quiet reversion to the familiar single-hazard heuristics that the complex model was designed to supersede. \citet{reichstein2025early} frame this structural vulnerability through the early-warning chain's ``five bridges of death'', where the overall efficacy of the system is determined by its weakest link---typically not the hazard forecast itself but the communication and decision-making stages that follow it. This pattern is not unique to disaster risk science. In emergency medicine, \citet{green1997altering} documented a case at a Michigan hospital where physicians were provided with the Heart Disease Predictive Instrument (HDPI)---a logistic-regression-based chart requiring approximately fifty probability estimates and a pocket calculator---to determine whether patients presenting with chest pain should be admitted to the coronary care unit. Despite the instrument's statistical sophistication, clinicians largely abandoned it: the cognitive and time costs of interpreting a tool they did not understand exceeded its perceived benefit. A subsequent fast-and-frugal decision tree, using only three sequential binary cues, not only restored physician compliance but outperformed the HDPI in predictive accuracy, reducing both missed heart attacks and false-alarm admissions \citep{gigerenzer2008heuristics}. The parallel to multi-risk assessment is direct. The HDPI's failure was not one of internal validity---its logistic regression was well-calibrated---but one of \textit{informational efficiency}: the ratio between usable, actionable output and the cognitive-institutional cost of processing model inputs collapsed to near zero in the operational environment. As \citet{gigerenzer2020bounded} argues, what determines the quality of a decision under uncertainty is not the complexity of the underlying model but the match between the model's structure and the decision-maker's ecological rationality---the cognitive and institutional constraints under which choices are actually made. The lesson for multi-risk science is that a Phase~III model, however theoretically comprehensive, achieves zero informational efficiency if its intended users cannot or do not engage with it.
+The core bottleneck exposed by the Phase~III landscape is not a deficit of integration but a deficit of uptake. When a civil protection agency is presented with a hyper-integrated, multi-risk model during or in preparation for a crisis, the likely institutional response is not enhanced decision-making but one of two failure modes: paralysis induced by interpretive overload, or quiet reversion to the familiar single-hazard heuristics that the complex model was designed to supersede. \citet{reichstein2025early} frame this structural vulnerability through the early-warning chain's ``five bridges of death'', where the overall efficacy of the system is determined by its weakest link---typically not the hazard forecast itself but the communication and decision-making stages that follow it. This pattern is not unique to disaster risk science. In emergency medicine, \citet{green1997altering} documented a case at a Michigan hospital where physicians were provided with the Heart Disease Predictive Instrument (HDPI)---a logistic-regression-based chart requiring approximately fifty probability estimates and a pocket calculator---to determine whether patients presenting with chest pain should be admitted to the coronary care unit. Despite the instrument's statistical sophistication, clinicians largely abandoned it: the cognitive and time costs of interpreting a tool they did not understand exceeded its perceived benefit. A subsequent fast-and-frugal decision tree, using only three sequential binary cues, not only restored physician compliance but outperformed the HDPI in predictive accuracy, reducing both missed heart attacks and false-alarm admissions \citep{gigerenzer2008heuristics}. The parallel to multi-risk assessment is direct. The HDPI's failure was not one of internal validity---its logistic regression was well-calibrated---but one of \textit{informational efficiency}: the ratio between usable, actionable output and the cognitive-institutional cost of processing model inputs collapsed to near zero in the operational environment. As \citet{gigerenzer2020bounded} argues, what determines the quality of a decision under uncertainty is not the complexity of the underlying model but the match between the model's structure and the decision-maker's ecological rationality---the cognitive and institutional constraints under which choices are actually made \citep{endsley1995measurement}. The lesson for multi-risk science is that a Phase~III model, however theoretically comprehensive, achieves zero informational efficiency if its intended users cannot or do not engage with it.
  
 \subsubsection{Redefining ``Success'' via Intention-to-Treat}
  

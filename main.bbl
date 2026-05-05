@@ -5,6 +5,12 @@ Blong, R. (1996).
 \newblock Volcanic hazards risk assessment.
 \newblock {\em Monitoring and mitigation of volcano hazards}, pages 675--698.
 
+\bibitem[Cover and Thomas, 2006]{cover2006elements}
+Cover, T.~M. and Thomas, J.~A. (2006).
+\newblock {\em Elements of information theory (wiley series in
+  telecommunications and signal processing)}.
+\newblock Wiley-interscience.
+
 \bibitem[De~Angeli et~al., 2022]{DeAngeli2022}
 De~Angeli, S., Malamud, B.~D., Rossi, L., Taylor, F.~E., Trasforini, E., and
   Rudari, R. (2022).
@@ -17,6 +23,12 @@ Deaton, A.~S. (2009).
   search for the elusive keys to economic development.
 \newblock NBER Working Paper 14690, National Bureau of Economic Research,
   Cambridge, MA.
+
+\bibitem[Domingos, 2000]{domingos2000unified}
+Domingos, P. (2000).
+\newblock A unified bias-variance decomposition.
+\newblock In {\em Proceedings of 17th international conference on machine
+  learning}, pages 231--238.
 
 \bibitem[Duflo et~al., 2006]{duflo2007using}
 Duflo, E., Glennerster, R., and Kremer, M. (2006).
@@ -44,12 +56,22 @@ Dunant, A., Robinson, T.~R., Densmore, A.~L., Rosser, N.~J., Rajbhandari,
   from the 2015 gorkha earthquake in nepal.
 \newblock {\em Natural Hazards and Earth System Sciences}, 25(1):267--285.
 
+\bibitem[Endsley, 1995]{endsley1995measurement}
+Endsley, M.~R. (1995).
+\newblock Measurement of situation awareness in dynamic systems.
+\newblock {\em Human factors}, 37(1):65--84.
+
 \bibitem[Ferrario et~al., 2025]{Ferrario2025}
 Ferrario, D.~M., Sanò, M., Maraschini, M., Critto, A., and Torresan, S.
   (2025).
 \newblock Harnessing machine learning methods for climate multi-hazard and
   multi-risk assessment.
 \newblock {\em EGUsphere}.
+
+\bibitem[Geman et~al., 1992]{geman1992neural}
+Geman, S., Bienenstock, E., and Doursat, R. (1992).
+\newblock Neural networks and the bias/variance dilemma.
+\newblock {\em Neural computation}, 4(1):1--58.
 
 \bibitem[Gigerenzer, 2020]{gigerenzer2020bounded}
 Gigerenzer, G. (2020).

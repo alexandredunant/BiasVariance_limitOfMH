@@ -5,47 +5,48 @@ Reallocating 'name_of_file' (item size: 1) to 8 items.
 The style file: apalike.bst
 Reallocating 'name_of_file' (item size: 1) to 11 items.
 Database file #1: references.bib
+Warning--I didn't find a database entry for "geman1992geman1992neural"
 Warning--there's a number but no volume in pereira2024integrating
 Warning--empty journal in seneviratne2021weather
-You've used 49 entries,
+You've used 53 entries,
             1935 wiz_defined-function locations,
-            787 strings with 13860 characters,
-and the built_in function-call counts, 20390 in all, are:
-= -- 1932
-> -- 1060
-< -- 30
-+ -- 384
-- -- 372
-* -- 1821
-:= -- 3662
-add.period$ -- 145
-call.type$ -- 49
-change.case$ -- 423
-chr.to.int$ -- 49
-cite$ -- 51
-duplicate$ -- 680
-empty$ -- 1278
-format.name$ -- 437
-if$ -- 3852
+            810 strings with 14486 characters,
+and the built_in function-call counts, 21938 in all, are:
+= -- 2089
+> -- 1105
+< -- 34
++ -- 400
+- -- 386
+* -- 1940
+:= -- 3919
+add.period$ -- 157
+call.type$ -- 53
+change.case$ -- 449
+chr.to.int$ -- 53
+cite$ -- 55
+duplicate$ -- 749
+empty$ -- 1398
+format.name$ -- 457
+if$ -- 4166
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 41
-newline$ -- 245
-num.names$ -- 148
-pop$ -- 344
+missing$ -- 46
+newline$ -- 265
+num.names$ -- 160
+pop$ -- 371
 preamble$ -- 1
-purify$ -- 427
+purify$ -- 454
 quote$ -- 0
-skip$ -- 519
+skip$ -- 572
 stack$ -- 0
-substring$ -- 1307
-swap$ -- 61
-text.length$ -- 4
+substring$ -- 1424
+swap$ -- 74
+text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 290
+type$ -- 312
 warning$ -- 2
-while$ -- 151
+while$ -- 166
 width$ -- 0
-write$ -- 624
-(There were 2 warnings)
+write$ -- 675
+(There were 3 warnings)

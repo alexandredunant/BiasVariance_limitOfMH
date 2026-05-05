@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.2.24)  5 MAY 2026 08:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.2.24)  5 MAY 2026 10:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -675,43 +675,53 @@ Package hyperref Info: Link coloring OFF on input line 29.
 
 Package todonotes Warning: The length marginparwidth is less than 2cm and will most likely cause issues with the appearance of inserted todonotes. The issue can be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to loading the todonotes package. on input line 29.
 
+
+Package natbib Warning: Citation `geman1992geman1992neural' on page 1 undefined on input line 38.
+
 [1
 
-{C:/Users/adunant/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] [3
-pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.89 
-     ] (bv_figure_input.tex) [4] [5
+{C:/Users/adunant/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] (bv_figure_input.tex) [3] [4
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.234 
-      ] [6
+l.191 
+      ] [5
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.243 \subsection
-                 {Phase II: Institutional Integration and the Illusion of Op...] [7] [8] [9] [10] [11] [12] [13] (main.bbl [14] [15] [16] [17]) [18] (main.aux)
+l.200 \subsection
+                 {Phase II: Institutional Integration and the Illusion of Op...] [6] [7] [8] [9]
+Overfull \vbox (23.2771pt too high) has occurred while \output is active []
+
+ [10
+pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.270 
+      ] [11] [12] [13] [14] (main.bbl [15] [16] [17] [18])
+
+Package natbib Warning: There were undefined citations.
+
+[19] (main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 6E3E541C936DCE7E0DC994F99F992223;3396.
+(rerunfilecheck)             Checksum: 94115785A2E6160EAD925F5F148E279E;3572.
  ) 
 Here is how much of TeX's memory you used:
- 33643 strings out of 467867
- 789166 string characters out of 5417366
- 1344178 words of memory out of 5000000
- 61922 multiletter control sequences out of 15000+600000
+ 33662 strings out of 467867
+ 789611 string characters out of 5417366
+ 1343341 words of memory out of 5000000
+ 61935 multiletter control sequences out of 15000+600000
  636019 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,21n,94p,2670b,2455s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,21n,94p,2701b,2455s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/adunant/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/adunant/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/adunant/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/adunant/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/adunant/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/adunant/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/adunant/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/adunant/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/adunant/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on main.pdf (18 pages, 266191 bytes).
+Output written on main.pdf (19 pages, 276779 bytes).
 PDF statistics:
- 407 PDF objects out of 1000 (max. 8388607)
- 87 named destinations out of 1000 (max. 500000)
- 117 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 473 PDF objects out of 1000 (max. 8388607)
+ 93 named destinations out of 1000 (max. 500000)
+ 125 words of extra memory for PDF output out of 10000 (max. 10000000)
 
