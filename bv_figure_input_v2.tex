@@ -1,0 +1,118 @@
+% Input-only TikZ fragment.
+% Main-document preamble requirements:
+% \usepackage{graphicx,float,tikz}
+% \usetikzlibrary{positioning,arrows.meta}
+
+\definecolor{biasred}{RGB}{175,35,35}
+\definecolor{varteal}{RGB}{25,145,150}
+\definecolor{totalblack}{RGB}{20,20,20}
+\definecolor{boxbg}{RGB}{252,252,252}
+\definecolor{ph1}{RGB}{170,35,35}
+\definecolor{ph2}{RGB}{45,110,55}
+\definecolor{ph3}{RGB}{30,95,165}
+
+\begin{tikzpicture}[font=\normalsize]
+
+% ---------- geometry ----------
+\def\xmax{8.0}          % wider plot panel (was 7.2)
+\def\ymax{5.3}
+\def\xopt{4.41}         % minimum of total for the new exponents
+\def\yopt{1.00}
+\def\plotshift{-13mm}   % pushes plot left; right edge stays at 6.95 real
+\def\timex{8.05}        % STATIC: timeline and boxes do not move
+\def\boxx{8.35}
+
+% ---------- styles ----------
+\tikzset{
+  ax/.style={-{Latex[length=3mm,width=2.3mm]}, line width=1.3pt, totalblack},
+  cv/.style={line width=2.1pt, samples=220, domain=0.02:\xmax+0.25},
+  lead/.style={line width=0.6pt, opacity=0.85},
+  phasebox/.style={draw=#1, fill=boxbg, rounded corners=5pt, line width=1pt,
+                   text width=4.7cm, inner xsep=6pt, inner ysep=5pt,
+                   align=left, font=\small},
+}
+
+% ---------- landscape panel: wider AND shifted left ----------
+\begin{scope}[xshift=\plotshift]
+
+% axes
+\draw[ax] (-0.2,0) -- (\xmax+0.25,0);
+\draw[ax] (0,-0.2) -- (0,\ymax+0.25);
+\node[font=\large\bfseries, totalblack, anchor=north west]
+      at (5.70,-0.24) {Complexity};
+\node[font=\large\bfseries, totalblack, rotate=90]
+      at (-0.58,{0.46*\ymax}) {Error};
+
+% curves: exponents slowed (0.55/0.66) so the wider domain still fits ymax
+\begin{scope}
+  \clip (0,0) rectangle (\xmax+0.25,\ymax);
+  \draw[cv,biasred]  plot (\x,{5*exp(-0.55*\x)+0.07});
+  \draw[cv,varteal]  plot (\x,{0.02*exp(0.66*\x)});
+  \draw[cv,totalblack,line width=2.4pt]
+                     plot (\x,{5*exp(-0.55*\x)+0.02*exp(0.66*\x)+0.19});
+\end{scope}
+
+% optimum stack (dashed stub below axis, three separate lines)
+\draw[totalblack!45, dashed, line width=1pt]
+      (\xopt,-0.52) -- (\xopt,\ymax-0.35);
+\filldraw[fill=white, draw=totalblack, line width=1pt]
+      (\xopt,0) circle (0.14);
+\fill[totalblack] (\xopt,\yopt) circle (0.07);
+\node[font=\small\bfseries, totalblack!75, anchor=north]
+      at (\xopt,-0.58) {Optimum};
+% \node[font=\footnotesize\itshape, totalblack!60, anchor=north]
+%       at (\xopt,-0.98)
+%       {Position of current practice relative to this optimum unknown};
+
+% curve labels, re-seated for the wider panel
+\node[biasred, font=\normalsize\bfseries, anchor=west]
+      at (1.00,0.85) {Bias$^2$};
+\draw[lead,biasred] (2.18,0.98) -- (2.53,1.24);
+\fill[biasred] (2.55,1.30) circle (0.05);
+
+\node[varteal, font=\normalsize\bfseries, anchor=west]
+      at (5.90,0.60) {Variance};
+\draw[lead,varteal] (6.35,0.82) -- (6.58,1.50);
+\fill[varteal] (6.62,1.58) circle (0.05);
+
+\node[totalblack, font=\normalsize\bfseries, anchor=east]
+      at (3.70,3.00) {Total Error};
+\draw[lead,totalblack] (3.30,2.80) -- (4.32,1.08);   % ends on the minimum dot
+
+\end{scope}
+
+% ---------- phase boxes: UNCHANGED (static, as requested) ----------
+\node[phasebox=ph1, anchor=north west] (box1) at (\boxx,\ymax)
+  {\textcolor{ph1}{\large\bfseries Phase I}\hspace{5pt}%
+   \textcolor{ph1}{\footnotesize Pre-2005}\\[4pt]
+   Siloed models\\[1pt]
+   Disciplinary silos};
+
+\node[phasebox=ph2, below=6mm of box1] (box2)
+  {\textcolor{ph2}{\large\bfseries Phase II}\hspace{5pt}%
+   \textcolor{ph2}{\footnotesize 2005--?}\\[4pt]
+   Institutional integration\\[1pt]
+   Participatory approaches};
+
+\node[phasebox=ph3, below=6mm of box2] (box3)
+  {\textcolor{ph3}{\large\bfseries Phase III}\hspace{5pt}%
+   \textcolor{ph3}{\footnotesize ? (unverified)}\\[4pt]
+   ``Model of everything''\\[1pt]
+   Position on landscape\\
+   \textbf{undetermined}};
+
+\draw[-{Latex[length=2.2mm,width=1.8mm]}, black!35, line width=0.9pt]
+  (box1) -- (box2);
+\draw[-{Latex[length=2.2mm,width=1.8mm]}, black!35, line width=0.9pt]
+  (box2) -- (box3);
+
+% ---------- temporal separator: UNCHANGED ----------
+\coordinate (timelinetop)    at (\timex,\ymax);
+\coordinate (timelinebottom) at (timelinetop |- box3.south);
+\draw[-{Latex[length=3mm,width=2.3mm]}, black!40, line width=1.2pt]
+  (timelinetop) -- (timelinebottom);
+\path (timelinetop) -- (timelinebottom)
+  node[midway, xshift=0mm, rotate=90, anchor=south,
+       font=\small\itshape, black!55] {Temporal evolution};
+
+\end{tikzpicture}

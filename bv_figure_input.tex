@@ -1,14 +1,8 @@
-% bv_figure_input.tex  --  drop-in TikZ figure for main.tex
-% Usage inside a figure environment:
-%   \resizebox{\linewidth}{!}{\input{bv_figure_input.tex}}
-%
-% Required in preamble:
-%   \usepackage{tikz}
-%   \usepackage{pgfplots}   \pgfplotsset{compat=1.18}
-%   \usepackage{xcolor}
-%   \usepackage{amsmath}
-%
-% Color definitions (add to preamble or keep here):
+% Input-only TikZ fragment.
+% Main-document preamble requirements:
+% \usepackage{graphicx,float,tikz}
+% \usetikzlibrary{positioning,arrows.meta,calc}
+
 \definecolor{biasred}{RGB}{175,35,35}
 \definecolor{varteal}{RGB}{25,145,150}
 \definecolor{totalblack}{RGB}{20,20,20}
@@ -17,111 +11,119 @@
 \definecolor{ph2}{RGB}{45,110,55}
 \definecolor{ph3}{RGB}{30,95,165}
 
-\begin{tikzpicture}[font=\small]
+\begin{tikzpicture}[font=\normalsize]
 
-% Curves: Bias^2(x)=7.2*exp(-0.52x)+0.08,  Var(x)=0.025*exp(0.52x)
-% Minimum at x*~=5.45,  Total(x*)~=0.93
+% ---------- geometry ----------
+\def\xmax{7.2}
+\def\ymax{5.3}
+\def\xopt{4.13}
+\def\yopt{0.85}
+\def\timex{7.95}
+\def\boxx{8.75}
 
-\def\xmax{15.5}
-\def\ymax{9.2}
-\def\xopt{5.45}
+% ---------- styles ----------
+\tikzset{
+  ax/.style={-{Latex[length=3mm,width=2.3mm]}, line width=1.3pt, totalblack},
+  cv/.style={line width=2.1pt, samples=220, domain=0.02:9.5},
+  lead/.style={line width=0.6pt, opacity=0.85},
+  phasebox/.style={draw=#1, fill=boxbg, rounded corners=5pt, line width=1pt,
+                   text width=5.15cm, inner xsep=6pt, inner ysep=5pt, % was 6pt
+                   align=left, font=\small},
+}
 
-% AXES
-\draw[->, line width=1.4pt, totalblack]
-    (-0.25,0) -- (\xmax,0)
-    node[below=5pt, font=\normalsize\bfseries] {Complexity};
-\draw[->, line width=1.4pt, totalblack]
-    (0,-0.25) -- (0,\ymax)
-    node[left=5pt, font=\normalsize\bfseries, 
-    rotate=90, 
-    yshift=10pt] {Error};
+% Shift the complete landscape left; the timeline and phase boxes stay fixed.
+\begin{scope}[xshift=-5mm]
 
-% CLIPPED CURVES
+% ---------- axes ----------
+\draw[ax] (-0.2,0) -- (\xmax+0.25,0);
+\draw[ax] (0,-0.2) -- (0,\ymax+0.25);
+\node[font=\large\bfseries, totalblack, anchor=north west]
+      at (5.10,-0.24) {Complexity};
+\node[font=\large\bfseries, totalblack, rotate=90]
+      at (-0.58,{0.46*\ymax}) {Error};
+
+% ---------- curves ----------
 \begin{scope}
-  \clip (0,0) rectangle (\xmax-0.05,\ymax-0.05);
-  \draw[biasred, line width=2.2pt, samples=250, domain=0.02:16]
-      plot (\x, {7.2*exp(-0.52*\x) + 0.08});
-  \draw[varteal, line width=2.2pt, samples=250, domain=0.02:16]
-      plot (\x, {0.025*exp(0.52*\x)});
-  \draw[totalblack, line width=2.6pt, samples=250, domain=0.02:16]
-      plot (\x, {7.2*exp(-0.52*\x) + 0.025*exp(0.52*\x) + 0.08});
+  \clip (0,0) rectangle (\xmax,\ymax);
+  \draw[cv,biasred]
+    plot (\x,{5*exp(-0.6*\x)+0.07});
+  \draw[cv,varteal]
+    plot (\x,{0.02*exp(0.7*\x)});
+  \draw[cv,totalblack,line width=2.4pt]
+    plot (\x,{5*exp(-0.6*\x)+0.02*exp(0.7*\x)+0.07});
 \end{scope}
 
-% % Exit arrowheads at top-right clip boundary
-% \draw[->, totalblack!80, line width=1.5pt] (14.05,8.82) -- (14.33,9.16);
-% \draw[->, varteal!80,    line width=1.5pt] (14.23,8.75) -- (14.51,9.12);
+% ---------- optimum ----------
+\draw[totalblack!45, dashed, line width=1pt]
+  (\xopt,0.08) -- (\xopt,\ymax-0.35);
+\filldraw[fill=white, draw=totalblack, line width=1pt]
+  (\xopt,0) circle (0.14);
+\fill[totalblack] (\xopt,\yopt) circle (0.07);
+\node[font=\small\bfseries, totalblack!75, anchor=north east]
+  at (\xopt-0.12,-0.25) {Optimum};
+\node[font=\footnotesize\itshape, totalblack!60, anchor=north,
+      align=center, text width=4.8cm]
+  at (\xopt,-0.77)
+  {Position of current practice relative to this optimum unknown};
 
-% OPTIMUM DASHED LINE (draw before boxes so line is behind them)
-\draw[totalblack!55, dashed, line width=1.1pt]
-    (\xopt,-0.15) -- (\xopt,9.05);
-\filldraw[totalblack, fill=white, line width=1.0pt]
-    (\xopt,0) circle (0.16);
+% ---------- curve labels ----------
+\node[biasred, font=\normalsize\bfseries, anchor=west]
+  at (1.00,0.80) {Bias$^2$};
+\draw[lead,biasred] (2.18,0.93) -- (2.53,1.12);
+\fill[biasred] (2.55,1.15) circle (0.05);
 
-% CURVE LABELS
-\node[totalblack, font=\small\bfseries, anchor=south west]
-    at (11.9,8.05) {Total Error};
-\node[varteal, font=\small\bfseries, anchor=west]
-    at (13.6,3.55) {Variance};
-\node[biasred, font=\small\bfseries, anchor=west]
-    at (13.4,0.50) {Bias$^2$};
+\node[varteal, font=\normalsize\bfseries, anchor=west]
+  at (5.35,0.55) {Variance};
+\draw[lead,varteal] (5.95,0.78) -- (6.17,1.46);
+\fill[varteal] (6.20,1.53) circle (0.05);
 
-% % DIRECTIONAL ARROWS BELOW X-AXIS
-% \draw[->, biasred!50, line width=1.0pt]
-%     (\xopt-0.5,-0.55) -- (0.5,-0.55);
-% \draw[->, varteal!50, line width=1.0pt]
-%     (\xopt+0.5,-0.55) -- (14.3,-0.55);
+\node[totalblack, font=\normalsize\bfseries, anchor=east]
+  at (3.90,3.00) {Total Error};
+\draw[lead,totalblack] (3.45,2.80) -- (3.07,1.11);
+\fill[totalblack] (3.05,1.04) circle (0.05);
 
-% BOXES
-% Box 1: Pre-2005  NW anchor at (0.3, 9.2) => spans x: 0.3..5.4, y: 7.4..9.2
-\node[draw=ph1, fill=boxbg, rounded corners=5pt, line width=1.1pt,
-      text width=4.0cm, inner xsep=10pt, inner ysep=8pt,
-      anchor=north west,
-      font=\small]
-    (box1) at (0.5, 10.0)
-    {\textcolor{ph1}{\textbf{Phase I - \,Pre-2005}}\\[5pt]
-     -Early siloed models\\[1pt]
-     -Disciplinary interaction};
+% ---------- unknown current position ----------
+% The two free-floating "?" glyphs are gone: they read as stray characters.
+% The "position undetermined" statement now lives in the note under the axis,
+% in the Phase III box, and in the caption. If you want a visual hook back,
+% use this self-explanatory badge instead of bare question marks:
+% \node[draw=ph3!50, dashed, thick, rounded corners=4pt, align=center,
+%       inner sep=4pt, text=ph3!75, font=\large\bfseries]
+%   at (5.90,4.20) {?\\[-1pt]\scriptsize\normalfont\itshape current practice};
 
-% Box 2: 2005-? centred at x=9.0 (clear of the dashed line label area)
-% With text width=5.6cm (~5.6 data units) => spans x: 9.0-3.1..9.0+3.1 = 5.9..12.1
-\node[draw=ph2, fill=boxbg, rounded corners=5pt, line width=1.1pt,
-      text width=5.0cm, inner xsep=10pt, inner ysep=8pt,
-      anchor=north,
-      font=\small]
-    (box2) at (8.5, 10.0)
-    {\textcolor{ph2}{\textbf{Phase II - \,2005\,--\,?}}\\[5pt]
-     -Optimal multi-risk model\\[1pt]
-     -Actionable participatory interaction};
+\end{scope}
 
-% Box 3: Phase III  NE anchor at (15.2, 9.2) => spans x: 9.9..15.2, y: 7.4..9.2
-\node[draw=ph3, fill=boxbg, rounded corners=5pt, line width=1.1pt,
-      text width=4.0cm, inner xsep=10pt, inner ysep=8pt,
-      anchor=north east,
-      font=\small]
-    (box3) at (16.2, 10.0)
-    {\textcolor{ph3}{\textbf{Phase III - \,?}}\\[5pt]
-     -``Model of everything''\\[1pt]
-     -``Too many cooks in the kitchen''};
+% ---------- phase boxes (tighter column: 6 mm gaps, 5 pt y-sep) ----------
+\node[phasebox=ph1, anchor=north west] (box1) at (\boxx,\ymax)
+  {\textcolor{ph1}{\large\bfseries Phase I}\hspace{5pt}%
+   \textcolor{ph1}{\footnotesize Pre-2005}\\[4pt]
+   Siloed models\\[1pt]
+   Disciplinary silos};
 
-% OPTIMUM LABEL drawn LAST so it appears on top of everything
-% anchor=west => start (left/bottom) of rotated text at given coord, reads upward
-\node[totalblack!65, font=\fontsize{12}{10}\selectfont\itshape,
-      rotate=90, anchor=west]
-    at (\xopt+0.32, 1.0) {Optimum Model Complexity};
+\node[phasebox=ph2, below=6mm of box1] (box2)
+  {\textcolor{ph2}{\large\bfseries Phase II}\hspace{5pt}%
+   \textcolor{ph2}{\footnotesize 2005--?}\\[4pt]
+   Institutional integration\\[1pt]
+   Participatory approaches};
 
-% % ARROWS (drawn after boxes so tips are visible)
-% \draw[->, totalblack!38, line width=0.9pt, shorten >=5pt, shorten <=6pt]
-%     (box1.south) -- (1.2, 5.55);
+\node[phasebox=ph3, below=6mm of box2] (box3)
+  {\textcolor{ph3}{\large\bfseries Phase III}\hspace{5pt}%
+   \textcolor{ph3}{\footnotesize ? (unverified)}\\[4pt]
+   ``Model of everything''\\[1pt]
+   Position on landscape \textbf{undetermined}};
 
-% \draw[->, totalblack!38, line width=0.9pt, shorten >=5pt, shorten <=6pt]
-%     (box2.south west) ++(0.3,0) -- (\xopt+0.15, 1.10);
+\draw[-{Latex[length=2.2mm,width=1.8mm]}, black!35, line width=0.9pt]
+  (box1) -- (box2);
+\draw[-{Latex[length=2.2mm,width=1.8mm]}, black!35, line width=0.9pt]
+  (box2) -- (box3);
 
-% \draw[->, totalblack!38, line width=0.9pt, shorten >=5pt, shorten <=6pt]
-%     (box3.south west) ++(0.3,0) -- (12.3, 6.6);
-
-% % Standalone uncertainty cue
-% \node[ph3, font=\large\bfseries] (qm) at (15.1,5.9) {?};
-% \draw[->, ph3!58, line width=1.1pt, shorten >=4pt, shorten <=4pt]
-%     (qm.west) -- (13.4, 4.65);
+% ---------- temporal separator (auto-centred on the box column) ----------
+\coordinate (timelinetop) at (\timex,\ymax);
+\coordinate (timelinebottom) at (timelinetop |- box3.south);
+\draw[-{Latex[length=3mm,width=2.3mm]}, black!40, line width=1.2pt]
+  (timelinetop) -- (timelinebottom);
+\node[font=\small\itshape, black!55, rotate=90, anchor=center]
+  at ([xshift=-4mm]$(timelinetop)!0.5!(timelinebottom)$)
+  {Temporal evolution};
 
 \end{tikzpicture}
