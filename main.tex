@@ -17,6 +17,7 @@
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{rotating}
+\usepackage{placeins}
 \usepackage[colorinlistoftodos]{todonotes}
 \geometry{margin=1in}
 \setstretch{1.2}
@@ -302,6 +303,7 @@ Table~\ref{tab:efficiency_metrics} summarises candidate markers across six dimen
 
 None of these markers is sufficient on its own, and not all will apply in every setting. Testing them in bounded contexts---where the decision, its users, and its time window are known---is the obvious next step.
 
+\FloatBarrier
 \section{Conclusion}
 
 The history of multi-risk assessment shows a clear direction of travel---from siloed, high-bias assessments toward increasingly integrated and complex ones---but not a known position. Whether the field today sits short of the bias--variance optimum, near it, or beyond it cannot be established with the evidence currently collected. This perspective suggests that increasing model complexity does not necessarily improve understanding or decision relevance, as integration can introduce additional uncertainty and interpretability challenges \citep{puy2022models, saltelli2020five}. Recent advances in holistic frameworks and AI-driven systems highlight both the potential and the difficulty of managing these trade-offs \citep{ward2026reducing, reichstein2025early}.
