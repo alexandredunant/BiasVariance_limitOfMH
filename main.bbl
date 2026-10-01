@@ -1,9 +1,34 @@
 \begin{thebibliography}{}
 
+\bibitem[Belkin et~al., 2019]{belkin2019reconciling}
+Belkin, M., Hsu, D., Ma, S., and Mandal, S. (2019).
+\newblock Reconciling modern machine-learning practice and the classical
+  bias--variance trade-off.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  116(32):15849--15854.
+
+\bibitem[Beven, 2006]{beven2006manifesto}
+Beven, K. (2006).
+\newblock A manifesto for the equifinality thesis.
+\newblock {\em Journal of Hydrology}, 320(1-2):18--36.
+
 \bibitem[Blong, 1996]{blong1996volcanic}
 Blong, R. (1996).
 \newblock Volcanic hazards risk assessment.
 \newblock {\em Monitoring and mitigation of volcano hazards}, pages 675--698.
+
+\bibitem[Box, 1976]{box1976science}
+Box, G. E.~P. (1976).
+\newblock Science and statistics.
+\newblock {\em Journal of the American Statistical Association},
+  71(356):791--799.
+
+\bibitem[Cash et~al., 2003]{cash2003knowledge}
+Cash, D.~W., Clark, W.~C., Alcock, F., Dickson, N.~M., Eckley, N., Guston,
+  D.~H., J{\"a}ger, J., and Mitchell, R.~B. (2003).
+\newblock Knowledge systems for sustainable development.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  100(14):8086--8091.
 
 \bibitem[Cover and Thomas, 2006]{cover2006elements}
 Cover, T.~M. and Thomas, J.~A. (2006).
@@ -17,24 +42,28 @@ De~Angeli, S., Malamud, B.~D., Rossi, L., Taylor, F.~E., Trasforini, E., and
 \newblock A multi-hazard framework for spatial-temporal impact analysis.
 \newblock {\em International Journal of Disaster Risk Reduction}, 73:102829.
 
-\bibitem[Deaton, 2009]{Deaton2009}
-Deaton, A.~S. (2009).
-\newblock Instruments of development: Randomization in the tropics, and the
-  search for the elusive keys to economic development.
-\newblock NBER Working Paper 14690, National Bureau of Economic Research,
-  Cambridge, MA.
+\bibitem[de~Ruiter et~al., 2020]{deruiter2020why}
+de~Ruiter, M.~C., Couasnon, A., van~den Homberg, M. J.~C., Daniell, J.~E.,
+  Gill, J.~C., and Ward, P.~J. (2020).
+\newblock Why we can no longer ignore consecutive disasters.
+\newblock {\em Earth's Future}, 8(3).
+
+\bibitem[de~Ruiter and van Loon, 2022]{deruiter2022challenges}
+de~Ruiter, M.~C. and van Loon, A.~F. (2022).
+\newblock The challenges of dynamic vulnerability and how to assess it.
+\newblock {\em iScience}, 25(8):104720.
+
+\bibitem[Dilling and Lemos, 2011]{dilling2011creating}
+Dilling, L. and Lemos, M.~C. (2011).
+\newblock Creating usable science: Opportunities and constraints for climate
+  knowledge use and their implications for science policy.
+\newblock {\em Global Environmental Change}, 21(2):680--689.
 
 \bibitem[Domingos, 2000]{domingos2000unified}
 Domingos, P. (2000).
 \newblock A unified bias-variance decomposition.
 \newblock In {\em Proceedings of 17th international conference on machine
   learning}, pages 231--238.
-
-\bibitem[Duflo et~al., 2006]{duflo2007using}
-Duflo, E., Glennerster, R., and Kremer, M. (2006).
-\newblock Using randomization in development economics research: A toolkit.
-\newblock NBER Technical Working Paper 333, National Bureau of Economic
-  Research, Cambridge, MA.
 
 \bibitem[Dunant, 2021]{Dunant2021}
 Dunant, A. (2021).
@@ -56,17 +85,19 @@ Dunant, A., Robinson, T.~R., Densmore, A.~L., Rosser, N.~J., Rajbhandari,
   from the 2015 gorkha earthquake in nepal.
 \newblock {\em Natural Hazards and Earth System Sciences}, 25(1):267--285.
 
-\bibitem[Endsley, 1995]{endsley1995measurement}
-Endsley, M.~R. (1995).
-\newblock Measurement of situation awareness in dynamic systems.
-\newblock {\em Human factors}, 37(1):65--84.
-
 \bibitem[Ferrario et~al., 2025]{Ferrario2025}
 Ferrario, D.~M., Sanò, M., Maraschini, M., Critto, A., and Torresan, S.
   (2025).
 \newblock Harnessing machine learning methods for climate multi-hazard and
   multi-risk assessment.
 \newblock {\em EGUsphere}.
+
+\bibitem[Gallina et~al., 2016]{gallina2016review}
+Gallina, V., Torresan, S., Critto, A., Sperotto, A., Glade, T., and Marcomini,
+  A. (2016).
+\newblock A review of multi-risk methodologies for natural hazards:
+  Consequences and challenges for a climate change impact assessment.
+\newblock {\em Journal of Environmental Management}, 168:123--132.
 
 \bibitem[Geman et~al., 1992]{geman1992neural}
 Geman, S., Bienenstock, E., and Doursat, R. (1992).
@@ -79,10 +110,27 @@ Gigerenzer, G. (2020).
 \newblock In {\em Routledge handbook of bounded rationality}, pages 55--69.
   Routledge.
 
-\bibitem[Gigerenzer et~al., 2011]{gigerenzer2008heuristics}
-Gigerenzer, G., Hertwig, R., and Pachur, T., editors (2011).
-\newblock {\em Heuristics: The Foundations of Adaptive Behavior}.
-\newblock Oxford University Press, New York.
+\bibitem[Gigerenzer and Brighton, 2009]{gigerenzer2009homo}
+Gigerenzer, G. and Brighton, H. (2009).
+\newblock {Homo} heuristicus: Why biased minds make better inferences.
+\newblock {\em Topics in Cognitive Science}, 1(1):107--143.
+
+\bibitem[Gigerenzer and Gaissmaier, 2011]{gigerenzer2011heuristic}
+Gigerenzer, G. and Gaissmaier, W. (2011).
+\newblock Heuristic decision making.
+\newblock {\em Annual Review of Psychology}, 62(1):451--482.
+
+\bibitem[Gill and Malamud, 2014]{gill2014reviewing}
+Gill, J.~C. and Malamud, B.~D. (2014).
+\newblock Reviewing and visualizing the interactions of natural hazards:
+  Interactions of natural hazards.
+\newblock {\em Reviews of Geophysics}, 52(4):680--722.
+
+\bibitem[Gill and Malamud, 2016]{gill2016hazard}
+Gill, J.~C. and Malamud, B.~D. (2016).
+\newblock Hazard interactions and interaction networks (cascades) within
+  multi-hazard methodologies.
+\newblock {\em Earth System Dynamics}, 7(3):659--679.
 
 \bibitem[Grandjean, 2025]{grandjean2025bibliographic}
 Grandjean, G. (2025).
@@ -95,16 +143,30 @@ Granger, K., Jones, T.~G., Leiba, M., and Scott, G. (1999).
 \newblock Community risk in cairns: A multi-hazard risk assessment.
 \newblock {\em The Australian Journal of Emergency Management}, 14(2):25--26.
 
-\bibitem[Green and Mehr, 1997]{green1997altering}
-Green, L.~A. and Mehr, D.~R. (1997).
-\newblock What alters physicians' decisions to admit to the coronary care unit?
-\newblock {\em The Journal of Family Practice}, 45(3):219--226.
-
 \bibitem[Hanger-Kopp et~al., 2022]{HangerKopp2022}
 Hanger-Kopp, S., Thaler, T., Seebauer, S., Schinko, T., and Clar, C. (2022).
 \newblock Defining and operationalizing path dependency for the development and
   monitoring of adaptation pathways.
 \newblock {\em Global Environmental Change}, 72:102425.
+
+\bibitem[Hart and Staveland, 1988]{hart1988development}
+Hart, S.~G. and Staveland, L.~E. (1988).
+\newblock Development of {NASA-TLX} ({Task Load Index}): Results of empirical
+  and theoretical research.
+\newblock In Hancock, P.~A. and Meshkati, N., editors, {\em Human Mental
+  Workload}, volume~52 of {\em Advances in Psychology}, pages 139--183.
+  North-Holland.
+
+\bibitem[Hastie et~al., 2009]{hastie2009elements}
+Hastie, T., Tibshirani, R., and Friedman, J. (2009).
+\newblock {\em The Elements of Statistical Learning}.
+\newblock Springer New York.
+
+\bibitem[Hewitt and Burton, 1971]{hewitt1971hazardousness}
+Hewitt, K. and Burton, I. (1971).
+\newblock {\em The Hazardousness of a Place: A Regional Ecology of Damaging
+  Events}.
+\newblock University of Toronto Press, Toronto.
 
 \bibitem[Hochrainer-Stigler et~al., 2024]{hochrainer2024managing}
 Hochrainer-Stigler, S., Deubelli-Hwang, T.~M., Parviainen, J., Cumiskey, L.,
@@ -113,16 +175,41 @@ Hochrainer-Stigler, S., Deubelli-Hwang, T.~M., Parviainen, J., Cumiskey, L.,
   systemic risk analysis with knowledge co-production.
 \newblock {\em One Earth}, 7(5):771--781.
 
+\bibitem[Hochrainer-Stigler et~al., 2023]{hochrainer2023toward}
+Hochrainer-Stigler, S., {\v{S}}aki{\'c}~Trogrli{\'c}, R., Reiter, K., Ward,
+  P.~J., de~Ruiter, M.~C., Duncan, M.~J., Torresan, S., Ciurean, R., Mysiak,
+  J., Stuparu, D., and Gottardo, S. (2023).
+\newblock Toward a framework for systemic multi-hazard and multi-risk
+  assessment and management.
+\newblock {\em iScience}, 26(5):106736.
+
 \bibitem[Horvitz and Barry, 1995]{Horvitz1995DisplayOIA}
 Horvitz, E. and Barry, M. (1995).
 \newblock Display of information for time-critical decision making.
 \newblock In {\em Conference on Uncertainty in Artificial Intelligence}.
+
+\bibitem[Howard, 1966]{howard1966information}
+Howard, R. (1966).
+\newblock Information value theory.
+\newblock {\em IEEE Transactions on Systems Science and Cybernetics},
+  2(1):22--26.
+
+\bibitem[Hunt et~al., 2007]{hunt2007models}
+Hunt, R.~J., Doherty, J., and Tonkin, M.~J. (2007).
+\newblock Are models too simple? arguments for increased parameterization.
+\newblock {\em Groundwater}, 45(3):254--262.
 
 \bibitem[Hynes et~al., 2020]{Hynes2020}
 Hynes, W., Lees, M., and Müller, J.~M. (2020).
 \newblock Bouncing forward: a resilience approach to dealing with covid-19 and
   future systemic shocks.
 \newblock {\em Environment Systems and Decisions}, 40:174--184.
+
+\bibitem[Jakeman et~al., 2006]{jakeman2006ten}
+Jakeman, A., Letcher, R., and Norton, J. (2006).
+\newblock Ten iterative steps in development and evaluation of environmental
+  models.
+\newblock {\em Environmental Modelling \& Software}, 21(5):602--614.
 
 \bibitem[Kalogiannidis, 2024]{kalogiannidis2024analyzing}
 Kalogiannidis, S. (2024).
@@ -135,16 +222,45 @@ Kappes, M.~S., Keiler, M., von Elverfeldt, K., and Glade, T. (2012).
 \newblock Challenges of analyzing multi-hazard risk: {A} review.
 \newblock {\em Natural Hazards}, 64(2):1925--1958.
 
+\bibitem[Keisler et~al., 2013]{keisler2014value}
+Keisler, J.~M., Collier, Z.~A., Chu, E., Sinatra, N., and Linkov, I. (2013).
+\newblock Value of information analysis: the state of application.
+\newblock {\em Environment Systems and Decisions}, 34(1):3--23.
+
+\bibitem[Kirchhoff et~al., 2013]{kirchhoff2013actionable}
+Kirchhoff, C.~J., Carmen~Lemos, M., and Dessai, S. (2013).
+\newblock Actionable knowledge for environmental decision making: Broadening
+  the usability of climate science.
+\newblock {\em Annual Review of Environment and Resources}, 38(1):393--414.
+
+\bibitem[Kirchner, 2006]{kirchner2006getting}
+Kirchner, J.~W. (2006).
+\newblock Getting the right answers for the right reasons: Linking
+  measurements, analyses, and models to advance the science of hydrology.
+\newblock {\em Water Resources Research}, 42(3).
+
 \bibitem[Klinke and Renn, 2002]{Klinke2002ANAB}
 Klinke, A. and Renn, O. (2002).
 \newblock A new approach to risk evaluation and management: Risk-based,
   precaution-based, and discourse-based strategies 1.
 \newblock {\em Risk Analysis}, 22.
 
+\bibitem[Komendantova et~al., 2014]{komendantova2014multi}
+Komendantova, N., Mrzyglocki, R., Mignan, A., Khazai, B., Wenzel, F., Patt, A.,
+  and Fleming, K. (2014).
+\newblock Multi-hazard and multi-risk decision-support tools as a part of
+  participatory risk governance: Feedback from civil protection stakeholders.
+\newblock {\em International Journal of Disaster Risk Reduction}, 8:50--67.
+
 \bibitem[Laino et~al., 2024]{laino2024scientometric}
 Laino, E., Paranunzio, R., and Iglesias, G. (2024).
 \newblock Scientometric review on multiple climate-related hazards indices.
 \newblock {\em Science of the Total Environment}, 945:174004.
+
+\bibitem[Lemos et~al., 2012]{lemos2012narrowing}
+Lemos, M.~C., Kirchhoff, C.~J., and Ramprasad, V. (2012).
+\newblock Narrowing the climate information usability gap.
+\newblock {\em Nature Climate Change}, 2(11):789--794.
 
 \bibitem[Lundstrom and Alam, 2022]{lundstrom2022moore}
 Lundstrom, M.~S. and Alam, M.~A. (2022).
@@ -157,6 +273,12 @@ Mack, C.~A. (2011).
 \newblock {\em IEEE Transactions on semiconductor manufacturing},
   24(2):202--207.
 
+\bibitem[Marzocchi et~al., 2012]{marzocchi2012basic}
+Marzocchi, W., Garcia-Aristizabal, A., Gasparini, P., Mastellone, M.~L., and
+  Di~Ruocco, A. (2012).
+\newblock Basic principles of multi-risk assessment: a case study in {Italy}.
+\newblock {\em Natural Hazards}, 62(2):551--573.
+
 \bibitem[Marzocchi et~al., 2009]{Marzocchi2009}
 Marzocchi, W., Mastellone, M., and Di~Ruocco, A. (2009).
 \newblock {\em Principles of multi-risk assessment: interactions amongst
@@ -168,6 +290,30 @@ Middelmann, M. and Granger, K. (2000).
 \newblock {\em Community risk in Mackay: a multi-hazard risk assessment}.
 \newblock Australian Geological Survey Organisation (AGSO).
 
+\bibitem[Mignan et~al., 2014]{mignan2014quantification}
+Mignan, A., Wiemer, S., and Giardini, D. (2014).
+\newblock The quantification of low-probability--high-consequences events: part
+  i. a generic multi-risk approach.
+\newblock {\em Natural Hazards}, 73(3):1999--2022.
+
+\bibitem[Miller, 1956]{miller1956magical}
+Miller, G.~A. (1956).
+\newblock The magical number seven, plus or minus two: Some limits on our
+  capacity for processing information.
+\newblock {\em Psychological Review}, 63(2):81--97.
+
+\bibitem[Morgan and Henrion, 1990]{morgan1990uncertainty}
+Morgan, M.~G. and Henrion, M. (1990).
+\newblock {\em Uncertainty: A Guide to Dealing with Uncertainty in Quantitative
+  Risk and Policy Analysis}.
+\newblock Cambridge University Press.
+
+\bibitem[Murphy, 1993]{murphy1993good}
+Murphy, A.~H. (1993).
+\newblock What is a good forecast? an essay on the nature of goodness in
+  weather forecasting.
+\newblock {\em Weather and Forecasting}, 8(2):281--293.
+
 \bibitem[MYRIAD-EU, 2022]{MYRIAD2022}
 MYRIAD-EU (2022).
 \newblock Multi-hazard and systemic framework for enhancing risk-informed
@@ -178,11 +324,36 @@ Nations, U. (2002).
 \newblock Johannesburg plan of implementation of the world summit on
   sustainable development.
 
+\bibitem[Newhall and Hoblitt, 2001]{newhall2002constructing}
+Newhall, C. and Hoblitt, R. (2001).
+\newblock Constructing event trees for volcanic crises.
+\newblock {\em Bulletin of Volcanology}, 64(1):3--20.
+
+\bibitem[Newman et~al., 2017]{newman2017review}
+Newman, J.~P., Maier, H.~R., Riddell, G.~A., Zecchin, A.~C., Daniell, J.~E.,
+  Schaefer, A.~M., van Delden, H., Khazai, B., O'Flaherty, M.~J., and Newland,
+  C.~P. (2017).
+\newblock Review of literature on decision support systems for natural hazard
+  risk reduction: Current status and future research directions.
+\newblock {\em Environmental Modelling \& Software}, 96:378--409.
+
+\bibitem[Oreskes et~al., 1994]{oreskes1994verification}
+Oreskes, N., Shrader-Frechette, K., and Belitz, K. (1994).
+\newblock Verification, validation, and confirmation of numerical models in the
+  {Earth} sciences.
+\newblock {\em Science}, 263(5147):641--646.
+
 \bibitem[Owolabi and Sajjad, 2023]{Owolabi2023}
 Owolabi, T.~A. and Sajjad, M. (2023).
 \newblock A global outlook on multi-hazard risk analysis: A systematic and
   scientometric review.
 \newblock {\em International Journal of Disaster Risk Reduction}, 92:103727.
+
+\bibitem[Pappenberger et~al., 2015]{pappenberger2015monetary}
+Pappenberger, F., Cloke, H.~L., Parker, D.~J., Wetterhall, F., Richardson,
+  D.~S., and Thielen, J. (2015).
+\newblock The monetary benefit of early flood warnings in {Europe}.
+\newblock {\em Environmental Science \& Policy}, 51:278--291.
 
 \bibitem[Pereira~Santos et~al., 2024]{pereira2024integrating}
 Pereira~Santos, A., Rodriguez~Lopez, J.~M., Peng, Y., and Scheffran, J. (2024).
@@ -204,6 +375,13 @@ Polese, M., Tocchi, G., Babi{\v{c}}, A., Dol{\v{s}}ek, M., Faravelli, M.,
 \newblock {\em International Journal of Disaster Risk Reduction},
   101(2024):104275.
 
+\bibitem[Puy et~al., 2022]{puy2022models}
+Puy, A., Beneventano, P., Levin, S.~A., Lo~Piano, S., Portaluri, T., and
+  Saltelli, A. (2022).
+\newblock Models with higher effective dimensions tend to produce more
+  uncertain estimates.
+\newblock {\em Science Advances}, 8(42).
+
 \bibitem[Reichstein et~al., 2025]{reichstein2025early}
 Reichstein, M., Benson, V., Blunk, J., Camps-Valls, G., Creutzig, F., Fearnley,
   C.~J., Han, B., Kornhuber, K., Rahaman, N., Sch{\"o}lkopf, B., T{\'a}rraga,
@@ -213,11 +391,51 @@ Reichstein, M., Benson, V., Blunk, J., Camps-Valls, G., Creutzig, F., Fearnley,
   intelligence.
 \newblock {\em Nature Communications}, 16(1):2564.
 
+\bibitem[Renn et~al., 2020]{renn2022systemic}
+Renn, O., Laubichler, M., Lucas, K., Kr{\"o}ger, W., Schanze, J., Scholz,
+  R.~W., and Schweizer, P.-J. (2020).
+\newblock Systemic risks from different perspectives.
+\newblock {\em Risk Analysis}, 42(9):1902--1920.
+
+\bibitem[Richardson, 2000]{richardson2000skill}
+Richardson, D.~S. (2000).
+\newblock Skill and relative economic value of the {ECMWF} ensemble prediction
+  system.
+\newblock {\em Quarterly Journal of the Royal Meteorological Society},
+  126(563):649--667.
+
 \bibitem[Rusca et~al., 2026]{rusca_water_2026}
 Rusca, M., Zwarteveen, M., Acharya, A., Alba, R., Haeffner, M., and Krueger, T.
   (2026).
 \newblock Water justice needs careful interdisciplinary research.
 \newblock {\em Nature Water}.
+
+\bibitem[{\v{S}}aki{\'c}~Trogrli{\'c} et~al.,
+  2024]{sakictrogrlic2024challenges}
+{\v{S}}aki{\'c}~Trogrli{\'c}, R., Reiter, K., Ciurean, R.~L., Gottardo, S.,
+  Torresan, S., Daloz, A.~S., Ma, L., Padr{\'o}n~Fumero, N., Tatman, S.,
+  Hochrainer-Stigler, S., de~Ruiter, M.~C., Schlumberger, J., Harris, R.,
+  Garcia-Gonzalez, S., Garc{\'i}a-Vaquero, M., Ar{\'e}valo, T. L.~F.,
+  Hernandez-Martin, R., Mendoza-Jimenez, J., Ferrario, D.~M., Geurts, D.,
+  Stuparu, D., Tiggeloven, T., Duncan, M.~J., and Ward, P.~J. (2024).
+\newblock Challenges in assessing and managing multi-hazard risks: A {European}
+  stakeholders perspective.
+\newblock {\em Environmental Science \& Policy}, 157:103774.
+
+\bibitem[Saltelli et~al., 2020]{saltelli2020five}
+Saltelli, A., Bammer, G., Bruno, I., Charters, E., Di~Fiore, M., Didier, E.,
+  Nelson~Espeland, W., Kay, J., Lo~Piano, S., Mayo, D., Pielke~Jr, R.,
+  Portaluri, T., Porter, T.~M., Puy, A., Rafols, I., Ravetz, J.~R., Reinert,
+  E., Sarewitz, D., Stark, P.~B., Stirling, A., van~der Sluijs, J., and Vineis,
+  P. (2020).
+\newblock Five ways to ensure that models serve society: a manifesto.
+\newblock {\em Nature}, 582(7813):482--484.
+
+\bibitem[Sarewitz and Pielke, 2007]{sarewitz2007neglected}
+Sarewitz, D. and Pielke, R.~A. (2007).
+\newblock The neglected heart of science policy: reconciling supply of and
+  demand for science.
+\newblock {\em Environmental Science \& Policy}, 10(1):5--16.
 
 \bibitem[Schl{\"u}ter et~al., 2024]{Schlter2024NavigatingCRA}
 Schl{\"u}ter, M., Hertz, T., Garc{\'i}a, M.~M., Banitz, T., Grimm, V.,
@@ -230,6 +448,12 @@ Schl{\"u}ter, M., Hertz, T., Garc{\'i}a, M.~M., Banitz, T., Grimm, V.,
 Scolobig, A., Komendantova, N., and Mignan, A. (2017).
 \newblock Mainstreaming multi-risk approaches into policy.
 \newblock {\em Geosciences}, 7(4):129.
+
+\bibitem[Selva, 2013]{selva2013long}
+Selva, J. (2013).
+\newblock Long-term multi-risk assessment: statistical treatment of interaction
+  among risks.
+\newblock {\em Natural Hazards}, 67(2):701--722.
 
 \bibitem[Seneviratne et~al., 2021]{seneviratne2021weather}
 Seneviratne, S.~I., Zhang, X., Adnan, M., Badi, W., Dereczynski, C., Luca,
@@ -251,6 +475,15 @@ Simon, H.~A. (1947).
 Simon, H.~A. (1956).
 \newblock Rational choice and the structure of the environment.
 \newblock {\em Psychological Review}, 63(2):129--138.
+
+\bibitem[Simpson et~al., 2021]{simpson2021framework}
+Simpson, N.~P., Mach, K.~J., Constable, A., Hess, J., Hogarth, R., Howden, M.,
+  Lawrence, J., Lempert, R.~J., Muccione, V., Mackey, B., New, M.~G., O'Neill,
+  B., Otto, F., P{\"o}rtner, H.-O., Reisinger, A., Roberts, D., Schmidt, D.~N.,
+  Seneviratne, S., Strongin, S., van Aalst, M., Totin, E., and Trisos, C.~H.
+  (2021).
+\newblock A framework for complex climate change risk assessment.
+\newblock {\em One Earth}, 4(4):489--501.
 
 \bibitem[Stonehouse and Snowdon, 2007]{stonehouse2007competitive}
 Stonehouse, G. and Snowdon, B. (2007).
@@ -307,10 +540,44 @@ Ward, P.~J., Buijs, S.~L., Ciurean, R., Claassen, J.~N., Daniell, J., De~Polt,
   multi-hazard and multi-risk assessment and management.
 \newblock {\em Natural Hazards and Earth System Sciences}, 26(3):1325--1345.
 
+\bibitem[Ward et~al., 2022]{ward2022invited}
+Ward, P.~J., Daniell, J., Duncan, M., Dunne, A., Hananel, C.,
+  Hochrainer-Stigler, S., Tijssen, A., Torresan, S., Ciurean, R., Gill, J.~C.,
+  Sillmann, J., Couasnon, A., Koks, E., Padr{\'o}n-Fumero, N., Tatman, S.,
+  Tronstad~Lund, M., Adesiyun, A., Aerts, J. C. J.~H., Alabaster, A., Bulder,
+  B., Campillo~Torres, C., Critto, A., Hern{\'a}ndez-Mart{\'i}n, R., Machado,
+  M., Mysiak, J., Orth, R., Palomino~Antol{\'i}n, I., Petrescu, E.-C.,
+  Reichstein, M., Tiggeloven, T., Van~Loon, A.~F., Vuong~Pham, H., and
+  de~Ruiter, M.~C. (2022).
+\newblock Invited perspectives: A research agenda towards disaster risk
+  management pathways in multi-(hazard-)risk assessment.
+\newblock {\em Natural Hazards and Earth System Sciences}, 22(4):1487--1497.
+
+\bibitem[Weichselgartner and Kasperson, 2010]{weichselgartner2010barriers}
+Weichselgartner, J. and Kasperson, R. (2010).
+\newblock Barriers in the science-policy-practice interface: Toward a
+  knowledge-action-system in global environmental change research.
+\newblock {\em Global Environmental Change}, 20(2):266--277.
+
 \bibitem[Zschau, 2017]{zschau20172}
 Zschau, J. (2017).
 \newblock Where are we with multihazards, multirisks assessment capacities?
 \newblock {\em Science for disaster risk management 2017: knowing better and
   losing less}.
+
+\bibitem[Zscheischler et~al., 2020]{zscheischler2020typology}
+Zscheischler, J., Martius, O., Westra, S., Bevacqua, E., Raymond, C., Horton,
+  R.~M., van~den Hurk, B., AghaKouchak, A., J{\'e}z{\'e}quel, A., Mahecha,
+  M.~D., Maraun, D., Ramos, A.~M., Ridder, N.~N., Thiery, W., and Vignotto, E.
+  (2020).
+\newblock A typology of compound weather and climate events.
+\newblock {\em Nature Reviews Earth \& Environment}, 1(7):333--347.
+
+\bibitem[Zscheischler et~al., 2018]{zscheischler2018future}
+Zscheischler, J., Westra, S., van~den Hurk, B. J. J.~M., Seneviratne, S.~I.,
+  Ward, P.~J., Pitman, A., AghaKouchak, A., Bresch, D.~N., Leonard, M., Wahl,
+  T., and Zhang, X. (2018).
+\newblock Future climate risk from compound events.
+\newblock {\em Nature Climate Change}, 8(6):469--477.
 
 \end{thebibliography}

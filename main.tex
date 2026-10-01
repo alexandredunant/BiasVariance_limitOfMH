@@ -16,6 +16,7 @@
 \usepackage{authblk}
 \usepackage{booktabs}
 \usepackage{tabularx}
+\usepackage{rotating}
 \usepackage[colorinlistoftodos]{todonotes}
 \geometry{margin=1in}
 \setstretch{1.2}
@@ -31,18 +32,18 @@
 \maketitle
 
 \begin{abstract}
-Efforts to integrate multiple hazards, exposure and vulnerabilities into coherent multi-risk frameworks have advanced over the past three decades, yet the field continues to lack operationalisable metrics to assess whether increasing modelling complexity has improved predictive or decision-making efficiency. This paper argues that the bias–variance tradeoff, originally from statistical learning theory, can serve as an analytical lens to interpret this trajectory and to ask whether the field's growing complexity reflects genuine progress or an "illusion of optimality". Without explicit measures of informational efficiency, risk integration could become performative rather than functional. We acknowledge that the path toward optimality must be reconciled with the actionability required by practitioners, and that once social components become central to an assessment, what counts as "optimal" is no longer technically determined but becomes relational, context-dependent, and contested. The paper therefore does not prescribe a universal optimum. Instead, it defines informational efficiency as the marginal gain in decision-relevant output obtained for each added increment of model complexity, and proposes a multi-dimensional set of markers---statistical, decisional, temporal, and institutional---through which this gain can be assessed.
+Efforts to integrate multiple hazards, exposure and vulnerabilities into coherent multi-risk frameworks have advanced over the past three decades, yet the field continues to lack operationalisable metrics to assess whether increasing modelling complexity has improved predictive or decision-making efficiency. This paper argues that the bias–variance tradeoff, originally from statistical learning theory, can serve as an analytical lens to interpret this trajectory and to ask whether the field's growing complexity reflects genuine progress or an "illusion of optimality". Without explicit measures of informational efficiency, risk integration could become performative rather than functional. We acknowledge that the path toward optimality must be reconciled with the actionability required by practitioners, and that once social components become central to an assessment, what counts as "optimal" is no longer technically determined but becomes relational, context-dependent, and contested. The paper therefore does not prescribe a universal optimum. Instead, it defines informational efficiency as the marginal gain in decision-relevant output obtained for each added increment of model complexity, and proposes a set of quantitative and qualitative markers---spanning statistical, decisional, temporal, institutional, interpretive, and social dimensions---through which this gain can be assessed.
 
 \end{abstract}
 
  \section{Introduction}
-Multi-risk assessments are inherently complex, requiring the integration of compounding hazards, dynamic exposure, and evolving societal vulnerabilities. Over the past three decades, tools and methods have advanced significantly to address these multiple layers of complexity. The bias--variance framework \citep{geman1992neural} provides a pragmatic analytical argument for a long-standing challenge in risk science: determining when integration enhances understanding and when it merely amplifies uncertainty. Rooted in statistics and popularised in machine learning, the concept describes the tradeoff between underfitting (high bias) and overfitting (high variance) \citep{geman1992neural, hastie2009elements}. Lower predictive error implies reduced uncertainty over outcomes, which in turn affects the expected decision \citep{domingos2000unified}. Building on \citet{Dunant2021}, who first applied this framework as an analytical argument toward multi-hazard risk assessments, this paper extends the analysis in three directions: (i) a three-phase historical mapping of the field's trajectory onto the bias--variance continuum, (ii) the introduction of \textit{informational efficiency} as a core evaluative concept, and (iii) a diagnosis of the ``illusion of optimality''---the risk that increasing complexity is mistaken for progress in the absence of shared efficiency metrics.
+Multi-risk assessments are inherently complex, requiring the integration of compounding hazards, dynamic exposure, and evolving societal vulnerabilities. Over the past three decades, tools and methods have advanced significantly to address these multiple layers of complexity. The bias--variance framework \citep{geman1992neural} provides a pragmatic analytical argument for a long-standing challenge in risk science: determining when integration enhances understanding and when it merely amplifies uncertainty. Rooted in statistics and popularised in machine learning, the concept describes the tradeoff between underfitting (high bias) and overfitting (high variance) \citep{geman1992neural, hastie2009elements}. Lower predictive error implies reduced uncertainty over outcomes, which in turn affects the expected decision \citep{domingos2000unified}. \citet{Dunant2021} first applied this framework to multi-hazard risk assessment, arguing that single-hazard approaches are biased and that multi-hazard integration is needed. This paper addresses the complementary question: once integration is under way, when does further complexity remain relevant? It does so in three directions: (i) a three-phase historical mapping of the field's trajectory onto the bias--variance continuum, (ii) the introduction of \textit{informational efficiency} as a core evaluative concept, and (iii) a diagnosis of the ``illusion of optimality''---the risk that increasing complexity is mistaken for progress in the absence of shared efficiency metrics.
 
 We specifically refer throughout to ``multi-risk'' frameworks as defined by \citet{zschau20172}: integrated systems that account for complex interactions among multiple hazards, exposed assets, and societal vulnerabilities---as distinct from simpler multi-hazard approaches that consider co-occurrence without systemic interdependencies. It is important to specify that regardless of the terminological scope---whether strictly multi-hazard (physical processes), multi-hazard risk (asset exposure), or multi-risk (systemic societal vulnerability)---the fundamental structural challenge remains analogous with the understanding that the rate of complexity increases at each step. Indeed each step up this hierarchy introduces new parameters, thereby increasing the risk of variance (overfitting) if the underlying process understanding does not scale at the same rate as the model's complexity.
 
 As \citet{Dunant2021} highlighted, single-hazard models in multi-hazard environments exhibit high bias, while overly complex multi-risk models might show high variance without proportional gains in predictive accuracy (Figure~\ref{fig:BV-figure}). However, this framework has remained largely theoretical. The field lacks operationalisable metrics---quantitative where measurable, qualitative where not---to situate itself within this landscape. The central premise of this paper follows directly: \textit{we do not know where the field currently sits on the bias--variance curve}. It may be close to an optimal balance, still on the high-bias side, or already drifting toward inefficiency; none of these positions can presently be confirmed or ruled out.
 
-This paper argues that \textit{informational efficiency} should become a core evaluative dimension of multi-risk science. We define it as the \textit{marginal} gain in uncertainty-aware, decision-relevant output obtained for each added increment of model complexity---for example, one additional hazard layer, interaction, or stakeholder input---relative to the simpler model without it. Framing efficiency at the margin is deliberate. The relevant question is not whether a complex model is useful overall, but whether each addition earns its place, which is the logic of value-of-information analysis \citep{howard1966information, keisler2014value} and of the distinction between forecast quality and forecast value \citep{murphy1993good}. The concept further draws on decision theory \citep{Horvitz1995DisplayOIA}, information theory \citep{shannon1948mathematical, cover2006elements}, and risk communication research \citep{Klinke2002ANAB}. In the context herein, informational efficiency is distinct from traditional statistical accuracy. In multi-risk environments, a purely quantitative ``performance'' metric risks missing the local social features and contexts that are fundamental to risk decision-making. The marginal gain can therefore be expressed in several currencies---statistical, decisional, temporal, and institutional---rather than a single rigid metric; candidate quantifications are proposed in Table~\ref{tab:efficiency_metrics}. We acknowledge that explicitly measuring efficiency may not in itself dissolve the illusion of optimality, particularly when social systems resist the very notion of a clear-cut and universal optimum. The argument is therefore not that better metrics will solve the problem, but that without any shared language of efficiency, the field cannot even diagnose where it stands.
+This paper argues that \textit{informational efficiency} should become a core evaluative dimension of multi-risk science. We define it as the \textit{marginal} gain in uncertainty-aware, decision-relevant output obtained for each added increment of model complexity---for example, one additional hazard layer, interaction, or stakeholder input---relative to the simpler model without it. Framing efficiency at the margin is deliberate. The relevant question is not whether a complex model is useful overall, but whether each addition earns its place, which is the logic of value-of-information analysis \citep{howard1966information, keisler2014value} and of the distinction between forecast quality and forecast value \citep{murphy1993good}. The concept further draws on decision theory \citep{Horvitz1995DisplayOIA}, information theory \citep{shannon1948mathematical, cover2006elements}, and risk communication research \citep{Klinke2002ANAB}. In the context herein, informational efficiency is distinct from traditional statistical accuracy. In multi-risk environments, a purely quantitative ``performance'' metric risks missing the local social features and contexts that are fundamental to risk decision-making. The marginal gain can therefore be expressed in several currencies, quantitative and qualitative---statistical, decisional, temporal, institutional, interpretive, and social---rather than a single rigid metric; candidate markers are proposed in Table~\ref{tab:efficiency_metrics}. We acknowledge that explicitly measuring efficiency may not in itself dissolve the illusion of optimality, particularly when social systems resist the very notion of a clear-cut and universal optimum. The argument is therefore not that better metrics will solve the problem, but that without any shared language of efficiency, the field cannot even diagnose where it stands.
 
 \section{Conceptual Framework}
 \label{sec:framework}
@@ -50,7 +51,7 @@ The bias--variance framework is used here, as in \citet{Dunant2021}, as a concep
 
 The concern is not new to environmental modelling. The difficulty of validating open-system models against an unambiguous ground truth \citep{oreskes1994verification}, the equifinality of competing model structures \citep{beven2006manifesto}, and the risk of getting ``the right answers for the wrong reasons'' \citep{kirchner2006getting} have long motivated calls for parsimony and iterative model evaluation \citep{box1976science, jakeman2006ten}. More recently, \citet{puy2022models} showed across a large sample of environmental and epidemiological models that models with higher effective dimensions tend to produce more uncertain estimates, and \citet{saltelli2020five} warned that complexity pursued for its own sake can undermine the relevance of models to the societies they serve. The opposite position has also been argued: over-simplified models can hide structural error and underestimate predictive uncertainty \citep{hunt2007models}. In machine learning, the classical U-shaped risk curve has itself been qualified by the ``double descent'' behaviour of heavily over-parameterised models \citep{belkin2019reconciling}. We note this caveat explicitly, because it cautions against assuming that more complexity \textit{must} mean more variance. In multi-risk assessment, however, the data regimes that make double descent possible are rarely available, and the relevant costs of complexity are as much cognitive and institutional as they are statistical. Behavioural research makes a parallel point: simple heuristics can outperform complex strategies precisely because they trade a little bias for a large reduction in variance \citep{gigerenzer2009homo, gigerenzer2011heuristic}.
 
-This lens applies beyond physical models. In participative exercises, the pursuit of comprehensive social integration may introduce redundancy, conflicting inputs, or epistemic noise. While the accumulation of heterogeneous and sometimes incommensurable knowledge claims from diverse disciplinary and stakeholder perspectives is a valuable reflection of complex social realities  \citep{Schlter2024NavigatingCRA, rusca_water_2026}, from a purely operational standpoint, it can challenge an actionable synthesis---thereby diminishing informational efficiency without commensurate gains in immediate decision relevance. This complexity also directly undermines interpretability: if practitioners cannot trace the causal logic amidst the noise of competing narratives, they cannot assume the professional responsibility required to translate assessments into action \citep{pereira2024integrating}. 
+This lens applies beyond physical models. In participatory exercises, the bias--variance logic concerns not the value of any particular knowledge, but how many inputs are combined and how. Heterogeneous and sometimes incommensurable knowledge claims from diverse disciplinary and stakeholder perspectives are a valuable reflection of complex social realities \citep{Schlter2024NavigatingCRA, rusca_water_2026}, and including them can reduce bias by bringing in knowledge that technical models miss. Yet, as with added model parameters, each additional input also carries a cost. When contributions accumulate faster than the means to reconcile them, the result can be redundancy, unresolved conflict between inputs, and difficulty reaching an actionable synthesis---a participatory analogue of variance, in which informational efficiency falls without a commensurate gain in decision relevance. Interpretability suffers too: if practitioners cannot trace the causal logic across competing narratives, they cannot assume the professional responsibility required to translate assessments into action \citep{pereira2024integrating}. The difficulty, in other words, lies not in participation itself but in integration without a way of judging what each contribution adds (Section~\ref{sec:discussion}).
 
 In this context, the pursuit of ``multi-risk'' optimality must account for bounded rationality \citep{Simon1956, Simon1947} and acknowledge the absence of ``unlimited resources of time, information, and computational might'' \citep{gigerenzer2020bounded}. Analogous to the ``efficiency--resilience'' tradeoff \citep{Hynes2020}, hyper-integration (low bias) could produce an ``integration--resilience tradeoff'', where noise overtakes the capacity for action.
 
@@ -222,6 +223,7 @@ Future progress depends on being honest about what kind of progress is being mad
 What the field currently lacks might not be more integration, but an explicit, shared account of these thresholds. Without it, efficiency claims remain unverifiable, complexity continues to be equated with progress, and the illusion of optimality persists \citep{scolobig2017mainstreaming, kalogiannidis2024analyzing}.
 
 \section{Discussion}
+\label{sec:discussion}
 
 The three phases outlined above trace a field moving from high-bias simplicity toward greater complexity, without a clear mechanism for evaluating its actual position on the curve or whether this trajectory constitutes progress. Several observations emerge.
 
@@ -229,50 +231,74 @@ First, the bias--variance analogy illuminates but does not resolve. In statistic
 
 Second, the distinction between scientific and operational progress---raised in Phase~III---deserves further attention. The ``Mushy Middle'' \citep{stonehouse2007competitive}, originally a concept from competitive strategy describing firms that pursue neither cost leadership nor differentiation, finds a parallel in multi-risk initiatives that achieve neither deep process understanding nor operational tractability. Recognising this risk does not require abandoning integration, but it does require that researchers and practitioners articulate---before model development---which standard of evaluation applies.
 
-Third, while informational efficiency is defined here as a marginal quantity, its \textit{measurement} is deliberately left open. Premature formalisation risks privileging one definition of ``useful output'' over others. Nevertheless, the field would benefit from pilot studies that attempt to quantify efficiency in bounded contexts---for example, by comparing the marginal decision value of adding a second hazard layer to a single-hazard assessment in a specific governance setting. Well-established tools already exist for parts of this task, from value-of-information analysis \citep{howard1966information, keisler2014value} to the economic value of forecasts under cost--loss decisions \citep{richardson2000skill, pappenberger2015monetary}. Table~\ref{tab:efficiency_metrics} summarises candidate metrics across four dimensions for such efforts.
+Third, while informational efficiency is defined here as a marginal quantity, its \textit{measurement} is deliberately left open. Premature formalisation risks privileging one definition of ``useful output'' over others. Nevertheless, the field would benefit from pilot studies that attempt to quantify efficiency in bounded contexts---for example, by comparing the marginal decision value of adding a second hazard layer to a single-hazard assessment in a specific governance setting. Well-established tools already exist for parts of this task, from value-of-information analysis \citep{howard1966information, keisler2014value} to the economic value of forecasts under cost--loss decisions \citep{richardson2000skill, pappenberger2015monetary}. These tools apply where the gain can be measured.
 
-\begin{table}[H]
+Fourth, much of what can make added complexity worthwhile cannot be reduced to a number. Once social components become central, the gain from an added layer may lie in a shared understanding of the problem, in the inclusion of previously ignored knowledge, or in the legitimacy of a decision---none of which has a natural metric. Multi-risk problems share many features of what \citet{rittel1973dilemmas} called ``wicked'' problems and of post-normal science, in which facts are uncertain, values in dispute, stakes high, and decisions urgent \citep{funtowicz1993science}. In such settings, the quality of an assessment cannot be judged by predictive skill alone, and uncertainty includes ignorance and indeterminacy as well as statistical variability \citep{wynne1992uncertainty, walker2003defining}. Relying on quantitative markers alone would itself introduce a bias: toward the parts of an assessment that happen to be easy to measure.
+
+The marginal logic of informational efficiency still applies; only the evidence changes. The question remains whether an added component earns its place relative to the assessment without it. Established approaches already give structure to such judgements. Pedigree analysis within the NUSAP system scores the strength of the knowledge behind each model input---its empirical basis, methodological rigour, and degree of validation---so that an added hazard layer can be judged against the quality of what it rests on \citep{funtowicz1990uncertainty, vandersluijs2005combining}. Sensitivity auditing extends this scrutiny to the framing and assumptions of a model \citep{saltelli2013what}. Adequacy-for-purpose evaluation asks not whether a model is accurate overall but whether it is fit for a specific use \citep{parker2020model}. Storylines offer a qualitative alternative to adding probabilistic layers, representing plausible physical pathways of an event in a form decision-makers can reason with \citep{shepherd2018storylines, sillmann2021event}. The criteria of credibility, salience, and legitimacy \citep{cash2003knowledge}, together with principles for knowledge co-production and participatory modelling \citep{hegger2012conceptualising, voinov2016modelling, norstrom2020principles}, provide a basis for judging whether added participatory complexity improves the knowledge produced rather than merely its volume. Evidence for these judgements can be gathered through structured interviews, mental-model elicitation \citep{morgan2002risk}, workshop observation, and post-event reviews. Where uncertainty is deep, the aim shifts from identifying an optimal model to identifying decisions that remain robust across plausible futures \citep{stirling2010keep, marchau2019decision}.
+
+Table~\ref{tab:efficiency_metrics} summarises candidate markers across six dimensions, pairing quantitative markers where measurement is possible with qualitative markers where it is not.
+
+\begin{sidewaystable}
 \centering
-\caption{Dimensions of informational efficiency for multi-risk assessments. Rather than a single scalar metric, efficiency is operationalised as a multi-dimensional evaluation spanning statistical, decisional, temporal, and institutional domains.}
+\caption{Candidate markers of informational efficiency for multi-risk assessments. Each marker compares an assessment with and without an added increment of complexity. Quantitative markers apply where measurement is possible; qualitative markers apply where gains lie in understanding, judgement, or legitimacy.}
 \label{tab:efficiency_metrics}
-\small
-\setlength{\tabcolsep}{4pt}
-\renewcommand{\arraystretch}{1.18}
-\begin{tabularx}{\textwidth}{@{} >{\raggedright\arraybackslash}p{0.18\textwidth} >{\raggedright\arraybackslash}p{0.22\textwidth} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{0.17\textwidth} @{}}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.1}
+\begin{tabularx}{\linewidth}{@{} >{\raggedright\arraybackslash}p{0.11\linewidth} >{\raggedright\arraybackslash}p{0.15\linewidth} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{0.12\linewidth} @{}}
 \toprule
-\textbf{Efficiency Dimension} & \textbf{Core Decision Question} & \textbf{Candidate Metric / Proxy} & \textbf{Theoretical Origin} \\
+\textbf{Dimension} & \textbf{Core Question} & \textbf{Quantitative Marker} & \textbf{Qualitative Marker} & \textbf{Origin} \\
 \midrule
 
-\textbf{Information Gain} & Does adding this complexity (e.g., a hazard layer) reduce uncertainty about the risk state? &
-\textit{Mutual Information}: Measures whether a new model input (e.g., an additional hazard layer) genuinely reduces uncertainty about the risk outcome, or merely adds noise.\par
-\textit{Output Uncertainty Change}: Change in the spread of model outputs once that input is included, relative to a simpler baseline; added inputs may narrow or widen it. &
-\citep{shannon1948mathematical}\par \citep{varley2025information}\par \citep{puy2022models} \\
+\textbf{Information Gain} & Does the added component reduce uncertainty about the risk state? &
+\textit{Mutual Information}: whether a new input genuinely reduces uncertainty about the risk outcome, or merely adds noise.\par
+\textit{Output Uncertainty Change}: change in the spread of outputs relative to a simpler baseline; added inputs may narrow or widen it. &
+\textit{Pedigree}: strength of the knowledge behind the added input (empirical basis, methodological rigour, validation) relative to the rest of the model. &
+\citep{shannon1948mathematical}\par \citep{puy2022models}\par \citep{vandersluijs2005combining} \\
 
 \midrule
 
-\textbf{Decision Impact} & Does the added complexity actually change the decision that would be made? &
-\textit{Decision Divergence Rate}: Frequency with which the complex model triggers a different categorical action (e.g., evacuate vs. shelter) compared to a simpler heuristic.\par
-\textit{Expected Value of Including Uncertainty (EVIU)}: Change in expected loss when acting on the complex model vs. a baseline.\par
-\textit{Relative Economic Value}: Value of the model to a user with a given cost--loss ratio, relative to climatology and a perfect forecast. &
+\textbf{Decision Impact} & Does the added complexity change the decision that would be made? &
+\textit{Decision Divergence Rate}: frequency with which the complex model triggers a different categorical action (e.g., evacuate vs.\ shelter).\par
+\textit{EVIU}: change in expected loss when acting on the complex model vs.\ a baseline.\par
+\textit{Relative Economic Value}: value to a user with a given cost--loss ratio. &
+\textit{Practitioner Accounts}: whether, in interviews or post-event reviews, users report that the added component changed what they understood or decided. &
 \citep{morgan1990uncertainty}\par \citep{murphy1993good}\par \citep{richardson2000skill} \\
 
 \midrule
 
-\textbf{Temporal Efficiency} & Does the model yield the decision within the available operational time window? &
-\textit{Decision Latency}: Time elapsed from data input to an actionable, interpretable output.\par
-\textit{Time-to-Decision Window}: Ratio of model processing time to the physical lead time of the hazard. &
+\textbf{Temporal Efficiency} & Does the model yield the decision within the available operational window? &
+\textit{Decision Latency}: time from data input to an actionable output.\par
+\textit{Time-to-Decision Window}: ratio of processing time to the physical lead time of the hazard. &
+\textit{Perceived Timeliness}: whether outputs arrive within the rhythm of operational briefings and meetings. &
 \citep{reichstein2025early} \\
 
 \midrule
 
-\textbf{Institutional Uptake} & Can the end-user actually process and defend the output under pressure? &
-\textit{Utilisation Rate}: Proportion of offered model runs that are actually used in the final decision (a compliance measure).\par
-\textit{Cognitive Load}: Number of distinct probabilistic inputs a decision-maker must synthesise to reach a binary action, complemented by standard workload scales. &
-\citep{Simon1956}\par \citep{miller1956magical}\par \citep{hart1988development} \\
+\textbf{Institutional Uptake} & Can the end-user process and defend the output under pressure? &
+\textit{Utilisation Rate}: proportion of offered model runs used in the final decision.\par
+\textit{Cognitive Load}: number of probabilistic inputs to synthesise, complemented by standard workload scales. &
+\textit{Adequacy for Purpose}: fit with legal mandates, standard operating procedures, and the specific decision the output is meant to inform. &
+\citep{Simon1956}\par \citep{hart1988development}\par \citep{parker2020model} \\
+
+\midrule
+
+\textbf{Interpret\-ability} & Can users trace why the model says what it says? &
+\textit{Driver Identification}: share of users who correctly identify the main driver of an output in a debrief. &
+\textit{Mental-Model Fit}: correspondence between users' mental models and the model's causal structure; plausibility of the event storylines it implies. &
+\citep{endsley1995measurement}\par \citep{morgan2002risk}\par \citep{shepherd2018storylines} \\
+
+\midrule
+
+\textbf{Legitimacy and Ownership} & Do affected parties regard the process and output as credible, salient, and legitimate? &
+\textit{Representation}: share of affected stakeholder groups whose inputs are traceably incorporated (an indicator only). &
+\textit{Credibility, Salience, Legitimacy}: as judged by users and affected groups; whether added participatory inputs improve the knowledge or only its volume. &
+\citep{cash2003knowledge}\par \citep{voinov2016modelling}\par \citep{norstrom2020principles} \\
 
 \bottomrule
 \end{tabularx}
-\end{table}
+\end{sidewaystable}
 
 None of these markers is sufficient on its own, and not all will apply in every setting. Testing them in bounded contexts---where the decision, its users, and its time window are known---is the obvious next step.
 
@@ -282,7 +308,7 @@ The history of multi-risk assessment shows a clear direction of travel---from si
 
 Building on the bias–variance perspective introduced by \citet{Dunant2021}, this paper argues that the central challenge is not only methodological but epistemic. Greater integration must be accompanied by clearer research intent and a systematic evaluation of informational efficiency---namely, the marginal gain in uncertainty-aware, usable output that each added increment of complexity delivers. The bias–variance framework therefore serves not as an end, but as a diagnostic tool to assess whether added complexity yields meaningful gains.
 
-To address this, we propose a multi-dimensional set of informational-efficiency markers (Table~\ref{tab:efficiency_metrics}). Each compares a model with a simpler version of itself, and together they span statistical, decisional, temporal, and institutional gains. They do not define a universal optimum, but they give the field a shared way of asking whether an added layer of complexity has earned its place.
+To address this, we propose a set of quantitative and qualitative informational-efficiency markers (Table~\ref{tab:efficiency_metrics}). Each compares an assessment with a simpler version of itself, and together they span statistical, decisional, temporal, institutional, interpretive, and social gains. The qualitative markers matter as much as the quantitative ones: where the value of an assessment lies in shared understanding or legitimacy, judging it only by what can be measured would reintroduce the very bias this framework is meant to expose. The markers do not define a universal optimum, but they give the field a shared way of asking whether an added layer of complexity has earned its place.
 
 Establishing such approaches is essential to ensure that the evolution of multi-risk modelling remains both rigorous and actionable in the context of increasingly interconnected global risks.
  

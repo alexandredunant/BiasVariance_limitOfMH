@@ -1,51 +1,49 @@
-This is BibTeX, Version 0.99e
+This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
-Reallocating 'name_of_file' (item size: 1) to 8 items.
 The style file: apalike.bst
-Reallocating 'name_of_file' (item size: 1) to 11 items.
 Database file #1: references.bib
 Warning--there's a number but no volume in pereira2024integrating
 Warning--empty journal in seneviratne2021weather
-You've used 53 entries,
+You've used 93 entries,
             1935 wiz_defined-function locations,
-            809 strings with 14462 characters,
-and the built_in function-call counts, 21938 in all, are:
-= -- 2089
-> -- 1105
-< -- 34
-+ -- 400
-- -- 386
-* -- 1940
-:= -- 3919
-add.period$ -- 157
-call.type$ -- 53
-change.case$ -- 449
-chr.to.int$ -- 53
-cite$ -- 55
-duplicate$ -- 749
-empty$ -- 1398
-format.name$ -- 457
-if$ -- 4166
+            1029 strings with 24834 characters,
+and the built_in function-call counts, 43061 in all, are:
+= -- 4038
+> -- 2481
+< -- 51
++ -- 926
+- -- 890
+* -- 4044
+:= -- 7643
+add.period$ -- 278
+call.type$ -- 93
+change.case$ -- 898
+chr.to.int$ -- 93
+cite$ -- 95
+duplicate$ -- 1322
+empty$ -- 2582
+format.name$ -- 1023
+if$ -- 8095
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 46
-newline$ -- 265
-num.names$ -- 160
-pop$ -- 371
+missing$ -- 91
+newline$ -- 465
+num.names$ -- 281
+pop$ -- 739
 preamble$ -- 1
-purify$ -- 454
+purify$ -- 905
 quote$ -- 0
-skip$ -- 572
+skip$ -- 1006
 stack$ -- 0
-substring$ -- 1424
-swap$ -- 74
+substring$ -- 2828
+swap$ -- 125
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 312
+type$ -- 548
 warning$ -- 2
-while$ -- 166
+while$ -- 319
 width$ -- 0
-write$ -- 675
+write$ -- 1193
 (There were 2 warnings)
